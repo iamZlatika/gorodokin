@@ -1,12 +1,17 @@
 {
-    "compilerOptions": {
-      "jsx": "preserve",
-      "module": "system",
-      "moduleResolution": "node",
-      "sourceMap": true,
-      "noImplicitAny": true,
-      "plugins": [{ "name": "typescript-plugin-css-modules" }]
-    },
-    "include": ["src/**/*", "css-modules.d.ts"],
-    "exclude": ["node_modules", "**/*.spec.ts"]
-  }
+  "compilerOptions": {
+    "jsx": "preserve",
+    "module": "system",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "noImplicitAny": true,
+  },
+  "include": [
+    "src/**/*",
+    "css-modules.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
+}
