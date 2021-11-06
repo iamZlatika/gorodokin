@@ -19,8 +19,8 @@ const NavbarItem: React.FC<NavbarItemProps> = () => {
     const navitemsRus = ["Обо мне", "Сертификаты", "Отзывы", "Контакты"]
     return (
         <>
-            {navitemsRus.map(navItem =>
-                <NavbarItemWrapper>
+            {navitemsRus.map((navItem, i) =>
+                <NavbarItemWrapper key={i}>
                     {navItem}
                 </NavbarItemWrapper>)}
         </>
