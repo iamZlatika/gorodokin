@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import React from 'react'
 import { AboutMeInfo } from '../../../data/aboutMe'
-import Button from '../../buttons/Button'
+import Button from '../../../components/buttons/Button'
 
 const InfoWrapper = styled.div`
 margin-left: 78px;

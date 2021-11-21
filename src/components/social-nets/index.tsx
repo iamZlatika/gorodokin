@@ -1,6 +1,10 @@
 import styled from '@emotion/styled'
 import React from 'react'
-import SocialNetItem from '../social-net-item'
+import SocialNetItem from './social-net-item'
+
+interface SocialNetItemsProps {
+    color: string
+}
 
 const NetItems = styled.ul`
 display: flex;
@@ -9,10 +13,10 @@ margin-left: auto;
 margin-bottom: 156px;
 `
 
-const SocialNetItems = () => {
+const SocialNetItems: React.FC<SocialNetItemsProps> = ({ color }) => {
     return (
         <NetItems>
-            <SocialNetItem />
+            <SocialNetItem color={color} />
         </NetItems>
     )
 }

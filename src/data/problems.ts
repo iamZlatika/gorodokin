@@ -44,6 +44,45 @@ const PSYCHOLOGICAL_PROBLEMS: PshychologicalProblem[] = [
     },
 ]
 
+const PROBLEMS_ENG : PshychologicalProblem[]= [{
+    name: "anxiety", 
+    title: "Pathological anxiety and obsessive thoughts",
+    helpSteps: [
+        "Will forulete an individual evidence-based treatment scheme ",
+        "Will help to avoid side effects and drug dependence.",
+        "Your sleep cycle will normalize, you will start to feel relaxed at mornings, inner discomfort will vanish"
+    ]
+},
+{
+    name: "depression", 
+    title: "Depression and anhedonia", 
+    helpSteps: [
+        "Will find antidepressant drug that fits you perfectly.",
+        "Will find out the reasons of your disorder and the way to solve them.",
+        "Your life will get back its colours, guilt and desperation will fade",
+        "You will have plans and joy again.",
+    ]
+},
+{
+    name: "symptoms", 
+    title: "Unexplained somatic symptoms ",
+    helpSteps: [
+        "Will find out mental reasons of somatic symptoms (when internists are sending you to psychotherapist), will show you exactly what is your problem and how to manage it.",
+        "Will teach you to prevent the relapse"
+    ]
+},
+{
+    name: "fatigue", 
+    title: "Irritability and chronic fatigue",
+    helpSteps: [
+        "Will figure out what exactly is happening with you",
+        "Will find optimal treatment to restore",
+        "Will find the way out of stressful conditions",
+        "Will link you with best specialists to cope with related endocrine violations"
+    ]
+},
+]
+
 export const getProblem = async (name: string) => PSYCHOLOGICAL_PROBLEMS.find(problem => problem.name === name)
 
 export const loadProblems = async () => PSYCHOLOGICAL_PROBLEMS

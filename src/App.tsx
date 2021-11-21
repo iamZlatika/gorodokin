@@ -1,10 +1,14 @@
 import React from 'react'
 import "./index.css"
-import Header from './components/header'
-import Showcase from './components/showcase'
-import  SocialNetItems from './components/showcase/social-net-items'
-import Problems from './components/problems'
-import AboutMe from './components/about-me'
+import Header from './sections/header'
+import Showcase from './sections/showcase'
+import SocialNetItems from './components/social-nets'
+import Problems from './sections/problems'
+import AboutMe from './sections/about-me'
+import Certificate from './sections/certificates'
+import Footer from './sections/footer'
+import CheckIn from './sections/check-in/CheckIn'
+import Reviews from './sections/reviews'
 
 
 const App = () => {
@@ -12,10 +16,14 @@ const App = () => {
         <div>
             <Header />
             <Showcase />
-            <SocialNetItems />
+            <SocialNetItems color="dark" />
             <AboutMe />
             <Problems />
+            <Certificate />
             HELLO ANTON
+            <Reviews />
+            <CheckIn />
+            <Footer />
         </div>
     )
 }

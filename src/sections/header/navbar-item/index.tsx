@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from "@emotion/styled";
-
+import { NAV_ITEMS_RUS } from '../../../data/navigation'
 interface NavbarItemProps {
     selected: boolean
 }
@@ -16,10 +16,9 @@ const NavbarItemWrapper = styled.li`
   padding: 30px 68px 30px 0;
 `
 const NavbarItem: React.FC<NavbarItemProps> = () => {
-    const navitemsRus = ["Обо мне", "Сертификаты", "Отзывы", "Контакты"]
     return (
         <>
-            {navitemsRus.map((navItem, i) =>
+            {NAV_ITEMS_RUS.map((navItem, i) =>
                 <NavbarItemWrapper key={i}>
                     {navItem}
                 </NavbarItemWrapper>)}
