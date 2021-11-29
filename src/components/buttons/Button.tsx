@@ -12,10 +12,12 @@ cursor: pointer;
 width: 258px;
 border-radius: 75px;
 outline: none;
+
 &:hover{
   background: ${(props) => (props.color === "default" ? "#fff" : "#FF8427")};
 color: ${(props) => (props.color === "default" ? "#FF8427" : "#fff")};
 border: ${(props) => (props.color === "default" ? "#FF8427 1px solid" : "none")};
+
 }
 `
 

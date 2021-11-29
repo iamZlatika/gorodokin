@@ -13,7 +13,10 @@ const NavbarItemWrapper = styled.li`
   font-weight: 300;
   line-height: 19px;
   color: #fff;
-  padding: 30px 68px 30px 0;
+  @media (max-width: 820px){
+      padding-top: 70px;
+      font-size: 20px;
+  }
 `
 const NavbarItem: React.FC<NavbarItemProps> = () => {
     return (

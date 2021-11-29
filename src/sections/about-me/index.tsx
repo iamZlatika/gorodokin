@@ -13,8 +13,8 @@ margin: 0 auto 120px auto;
 img{
     display: block;
     border-radius: 0px 62px 0px 0px;
-    width: 587px;
-    height: 586px;
+    width: 50%;
+    height: auto;
     object-fit: cover;
 }
 

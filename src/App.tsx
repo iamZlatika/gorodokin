@@ -20,7 +20,6 @@ const App = () => {
             <AboutMe />
             <Problems />
             <Certificate />
-            HELLO ANTON
             <Reviews />
             <CheckIn />
             <Footer />

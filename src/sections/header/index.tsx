@@ -11,11 +11,14 @@ width: 80%;
 display: flex;
 justify-content: space-between;
 margin: auto;
+padding-top: 30px;
+padding-bottom: 30px;
 `
 
 const RightSection = styled.div`
 display: flex;
 align-items: center;
+width: 30%;
 h2{
    color: #fff;
 font-family: 'Tenor Sans', sans-serif;
@@ -24,6 +27,8 @@ font-weight: 400;
 line-height: 19px;
 padding-right: 35px; 
 }
+
+
 `
 
 

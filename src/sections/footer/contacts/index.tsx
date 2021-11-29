@@ -6,13 +6,14 @@ import SocialNetItems from '../../../components/social-nets'
 const ContactsWrapper = styled.div`
 display: flex;
 flex-direction: column;
-div{
-    padding-top: 29px;
-    margin: 0;
-    width: 500px;
+width:50%;
+.contacts{
+    margin-top: 58px;
+    column-gap: 5%;
+    row-gap: 15%;
     display: grid;
     grid-template-rows: 40px 40px;
-    grid-template-columns: 220px 220px;
+    grid-template-columns: 1fr 1fr;
     font-size: 18px;
     line-height: 21px;
     font-family: "Raleway", sans-serif;
@@ -33,7 +34,7 @@ const Contacts = () => {
     return (
         <ContactsWrapper>
             <h2>Контакты</h2>
-            <div>
+            <div className="contacts">
                 <div>{CONTACTS_RUS.name}</div>
                 <div>{CONTACTS_RUS.phone}</div>
                 <div>{CONTACTS_RUS.town}</div>

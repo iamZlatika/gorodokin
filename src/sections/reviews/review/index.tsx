@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import React from 'react'
+import Arrow from '../../../components/arrow'
 import femaleUser from '../../../images/icons/user-female.svg'
 import maleUser from '../../../images/icons/user-male.svg'
 
@@ -9,10 +10,12 @@ interface ReviewProps {
 
 const ReviewStyled = styled.div`
 display: flex;
-justify-content: center;
+justify-content: space-between;
 position: relative;
 padding-bottom: 200px;
+align-items: center;
 .user_icon{
+    margin-left: 10px;
     position: relative;
     margin-right: 60px;
     img{
@@ -35,7 +38,7 @@ padding-bottom: 200px;
     font-weight: 300;
     font-size: 18px;
     line-height: 130%;
-    width: 515px;
+    max-width: 515px;
     h3{
         font-weight: 500;
         font-size: 20px;
@@ -53,23 +56,33 @@ padding-bottom: 200px;
     p{
         font-weight: 300;
         font-size: 18px;
-line-height: 130%;
+        line-height: 130%;
     }
 }
-;
 `
 const Review: React.FC<ReviewProps> = ({ sex }) => {
     return (
         <ReviewStyled>
+            <Arrow
+                className="arrow_left"
+                color="white"
+                direction="left"
+            />
             <div className="user_icon">
                 <img src={femaleUser} alt="" />
                 <div className="under"></div>
             </div>
             <div className="user_info">
+
                 <h3>Кристина Никитина</h3>
                 <span>27 лет</span>
                 <p>Антон - очень профессиональный психолог. У меня были проблемы с самоопредитением. Какие-то чувства тревоги и дискомфорта. У меня было деприссивное состояние. Антон мне помог, я полувствовала себя легче, более уверенной. Он помог в прямом смысле найти смысл жизни.</p>
-            </div>
+
+            </div> <Arrow
+                color="white"
+                direction="right"
+                className="arrow_right"
+            />
         </ReviewStyled>
     )
 }

@@ -4,7 +4,7 @@ import { AboutMeInfo } from '../../../data/aboutMe'
 import Button from '../../../components/buttons/Button'
 
 const InfoWrapper = styled.div`
-margin-left: 78px;
+margin-left: 50px;
 width: 50%;
 color: #1A181B;
 h2{
@@ -27,6 +27,12 @@ span{
     line-height: 130%;
     padding-top: 14px;
     padding-bottom: 22px;
+}
+
+@media(max-width: 1200px){
+    h2{
+        padding-top: 0;
+    }
 }
 `
 
