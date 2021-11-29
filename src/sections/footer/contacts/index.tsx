@@ -6,6 +6,7 @@ import SocialNetItems from '../../../components/social-nets'
 const ContactsWrapper = styled.div`
 display: flex;
 flex-direction: column;
+width:50%;
 div{
     padding-top: 29px;
     margin: 0;

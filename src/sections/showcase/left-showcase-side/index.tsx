@@ -1,6 +1,17 @@
 import styled from '@emotion/styled'
 import React from 'react'
 import Button from '../../../components/buttons/Button'
+// import media from 'emotion-media-query';
+
+
+const breakpoints: {
+    [index: string]: number
+ } = {
+    sm: 500,
+    md: 768,
+    lg: 992,
+    xl: 1200,
+ };
 
 
 
@@ -16,6 +27,13 @@ div{
         text-transform: uppercase;
         margin-top: 156px;
         user-select: none;
+        @media(max-width: 1200px){
+    div{
+        h2{
+            font-size: 64px;
+        }
+    }
+} 
     }
     h3{
         font-weight: 300;
@@ -27,6 +45,14 @@ div{
 
     }
 }
+
+@media(max-width: 1200px){
+    div{
+        h2{
+            font-size: 60px;
+        }
+    }
+} 
 `
 const LeftShowcase = () => {
 

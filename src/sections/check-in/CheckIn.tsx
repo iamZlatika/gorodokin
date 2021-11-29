@@ -9,9 +9,11 @@ margin: 120px auto;
 display: flex;
 justify-content: space-between;
 img{
-    width: 702px;
-    height: 469px;
+    width: 60%;
+    height: auto;
     border-radius: 0px 62px 0px 0px;
+    object-fit: cover;
+  
 }
 `
 

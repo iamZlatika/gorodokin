@@ -10,7 +10,7 @@ import Input from '../../../components/input/input'
 
 const CheckInFormStyled = styled.div`
 width: 40%;
- 
+ margin-right: 10px;
 margin-top: 40px;
 h2{
     font-family: 'Tenor Sans', sans-serif;
@@ -28,16 +28,17 @@ span{
     display: inline-block;
 }
 form{
+    width: 100%;
     font-family: "Raleway", sans-serif;
     .datepicker_group{
         display: flex;
         margin-top: 25px;
+        flex-wrap: wrap;
     
     }
     .input_group{
-        margin-top: 40px;
-        margin-bottom: 40px;
-        width: 400px;
+               margin-bottom: 40px;
+        
     }
 }
 `

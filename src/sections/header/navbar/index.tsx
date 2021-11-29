@@ -4,11 +4,11 @@ import NavbarItem from '../navbar-item'
 
 const NavbarWrapper = styled.ul`
    
-    padding: 0;
-    margin: 0;
+  width: 70%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-right: 30px;
 `
 
 const Navbar: React.FC = () => {

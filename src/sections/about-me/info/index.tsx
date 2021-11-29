@@ -28,6 +28,12 @@ span{
     padding-top: 14px;
     padding-bottom: 22px;
 }
+
+@media(max-width: 1200px){
+    h2{
+        padding-top: 0;
+    }
+}
 `
 
 interface InfoProps {

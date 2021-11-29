@@ -15,6 +15,9 @@ h2{
     color: #FF8427;
     }  
 }
+@media(max-width: 1200px){
+    text-align: center;
+}
 `
 
 const Problems = () => {

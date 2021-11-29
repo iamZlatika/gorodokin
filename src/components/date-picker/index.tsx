@@ -10,7 +10,8 @@ const DatePickerComponentWrapper = styled.div`
 width: 150px!important;
 display: flex;
 flex-direction: column;
-margin-right: 40px;
+margin-right: auto;
+margin-bottom: 15px;
 
 label{
     font-weight: 500;
