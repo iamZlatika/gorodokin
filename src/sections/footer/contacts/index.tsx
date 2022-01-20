@@ -39,7 +39,11 @@ const Contacts = () => {
                 <div>{CONTACTS_RUS.phone}</div>
                 <div>{CONTACTS_RUS.town}</div>
             </div>
-            <SocialNetItems color="light" />
+            <SocialNetItems 
+            color="light" 
+            position="static"
+            direction="row"
+            />
         </ContactsWrapper>
     )
 }

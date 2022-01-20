@@ -6,7 +6,7 @@ interface cotnacts {
 
 export const CONTACTS_RUS :cotnacts = 
     {name: "Антон Городокин",
-    phone: "+380950484022", 
+    phone: "+380996199029", 
     town: "г. Запорожье" }
    
 

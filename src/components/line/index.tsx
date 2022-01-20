@@ -9,6 +9,10 @@ background: #FF8427;
 @media(max-width: 1200px){
     width: 90px;
 }
+@media(max-width: 820px){
+    height: 90px;
+    width: 2px;
+}
 `
 
 const Line = () => {

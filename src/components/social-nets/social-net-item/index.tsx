@@ -9,6 +9,7 @@ import styled from '@emotion/styled'
 
 interface SocialNetItemProps {
     color: string
+    className?: string
 }
 const NetItemWrapper = styled.li<Pick<SocialNetItemProps, "color">>`
 list-style: none;
@@ -21,9 +22,6 @@ display: flex;
 align-items: center;
 justify-content: center;
 margin-top: 30px;
-& + li{
-    margin-left: 33px;
-}
 svg{
     height: 15px;
     width: 15px;

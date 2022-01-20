@@ -38,7 +38,7 @@ const Header = () => {
             <Container>
                 <Navbar />
                 <RightSection>
-                    <h2>+380950484022</h2>
+                    <h2>+380996199029</h2>
                     <Localazer />
                 </RightSection>
             </Container>

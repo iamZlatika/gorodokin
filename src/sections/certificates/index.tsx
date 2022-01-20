@@ -15,23 +15,32 @@ display: flex;
 padding-left: 10%;
 flex-direction: column;
 align-items: center;
+.sert-title{
+    width: 360px;
+    display: flex;
+    justify-content: center;
+
     h2{
          margin-top: 110px;
         font-size: 32px;
         line-height: 37px;
         color: #1A181B;
-}
+        text-align: center;
+        font-family: 'Tenor Sans', sans-serif;
+        font-weight: 400;
+}}
     .time_line{
         display: flex;
         margin-top: 230px;
-    .cert-item{
+        flex-direction: row;
+        .cert-item{
         display: flex;
         flex-direction: column;
         align-items: center;
         &:first-child div:first-child {
             background: linear-gradient(90deg, rgba(151,154,153,1) 0%, rgba(151,154,153,1) 36%, rgba(14,64,45,1) 100%, rgba(14,64,45,1) 100%);
             opacity: 0.3;
-    }
+         }
     &:last-child div div:nth-child(3) {
             background: linear-gradient(90deg, rgba(151,154,153,1) 0%, rgba(151,154,153,1) 36%, rgba(14,64,45,1) 100%, rgba(14,64,45,1) 100%);
             transform: rotate(180deg);
@@ -42,6 +51,7 @@ align-items: center;
 }
 .cert-pic{
     display: flex;
+    flex-direction: row;
    } 
 .cert-text{
     max-width: 250px;
@@ -58,8 +68,58 @@ align-items: center;
     right: 0;
 }
 @media(max-width: 1200px){
+    height: auto;
+    
     .cert-text{
         width: 180px    }
+}
+@media(max-width: 820px){
+    .sert-title{
+        justify-content: flex-start;
+        h2{
+            font-size: 24px;
+            line-height: 28px; 
+        }
+    }
+    .time_line{
+        width: 100%;
+        height: 800px;
+        margin-top: 20px;
+        flex-direction: column;
+        .cert-item{
+            flex-direction: row;
+            justify-content: center;
+            h4{
+                display: none;
+            }
+            .cert-pic{
+                flex-direction: column;
+            }
+            .cert-text{
+                transform: translateY(90px);
+                border: 1px solid #000000;
+                box-sizing: border-box;
+                border-radius: 10px;
+                padding: 16px;
+                width: auto;
+                text-align: start;
+                font-family: "Raleway", sans-serif;
+                font-size: 16px;
+                line-height: 130%;
+                margin-left: 64px;
+                h3{
+                    font-family: 'Tenor Sans', sans-serif;
+                    font-size: 20px;
+                    line-height: 23px;
+                }
+            }
+        }
+    }
+    .certificates_nav{
+        position: static;
+        margin-bottom: 60px;
+        width: 360px;
+    }
 }
 `
 
@@ -67,7 +127,9 @@ const Certificate = () => {
     const [certificates, setCertificates] = useState(CERTIFICATES)
     return (
         <CertificateWrapper>
-            <h2>Сертификаты</h2>
+            <div className="sert-title">
+                <h2>Сертификаты</h2>
+            </div>
             <NumberLine />
             <div className="time_line">
                 {certificates.map((cert, idx) => cert.status &&
@@ -82,7 +144,8 @@ const Certificate = () => {
                         </div>
                         <div
                             className="cert-text">
-                            {cert.textRUS}
+                            <h3>{cert.year}</h3>
+                            <p>{cert.textRUS}</p>
                         </div>
                     </div>)}
 

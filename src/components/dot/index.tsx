@@ -8,6 +8,11 @@ height: 34px;
 border-radius: 50%;
 box-sizing: border-box;
 transform: translateY(-16px);
+transform: translateX(0);
+@media(max-width: 820px){
+    transform: translateY(0);
+    transform: translateX(-16px);
+}
 `
 
 const Dot = () => {

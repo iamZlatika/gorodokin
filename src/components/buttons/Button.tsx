@@ -19,6 +19,7 @@ color: ${(props) => (props.color === "default" ? "#FF8427" : "#fff")};
 border: ${(props) => (props.color === "default" ? "#FF8427 1px solid" : "none")};
 
 }
+
 `
 
 interface ButtonProps {

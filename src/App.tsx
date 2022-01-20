@@ -16,7 +16,7 @@ const App = () => {
         <div>
             <Header />
             <Showcase />
-            <SocialNetItems color="dark" />
+            {/* <SocialNetItems color="dark" /> */}
             <AboutMe />
             <Problems />
             <Certificate />
