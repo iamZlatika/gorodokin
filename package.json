@@ -52,6 +52,7 @@
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
     "@types/react-datepicker": "^4.3.2",
+    "emailjs-com": "^3.2.0",
     "emotion-media-query": "^1.0.1",
     "file-loader": "^6.2.0",
     "moment": "^2.29.1",
@@ -63,6 +64,9 @@
     "react-router": "^5.2.1",
     "react-router-dom": "^5.3.0",
     "redux": "^4.1.2",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.4.1",
+    "thunk": "^0.0.1",
     "url-loader": "^4.1.1"
   }
 }
