@@ -29,12 +29,10 @@ flex-direction: column;
     }
 
 @media(max-width: 1200px){
-    div{
-        h2{
-            font-size: 60px;
+           h2{
+            font-size: 50px;
         }
-    
-    }
+        
 } 
 @media(max-width: 820px){
     width: 80%;
@@ -52,6 +50,12 @@ flex-direction: column;
             margin: 0 auto 44px;
         }
    
+}
+@media(max-width: 350px){
+h2{
+    font-size: 30px;
+    line-height: 36px;
+}
 }
 `
 const LeftShowcase = () => {

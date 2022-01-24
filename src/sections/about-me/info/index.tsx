@@ -8,6 +8,7 @@ margin-left: 50px;
 width: 50%;
 color: #1A181B;
 h2{
+    display: block;
     font-size: 32px;
     line-height: 37px;
     font-family: 'Tenor Sans', sans-serif;
@@ -34,6 +35,17 @@ span{
         padding-top: 0;
     }
 }
+@media(max-width: 820px){
+    margin-left: 0;
+    width: 100%;
+    h2{
+    display: none;
+}
+.btn_container{
+    display: flex;
+    justify-content: center;
+}
+}
 `
 
 interface InfoProps {
@@ -50,7 +62,8 @@ const Info: React.FC<InfoProps> = ({ info }) => {
             <h2>{title}</h2>
             <p>{text}</p>
             <span>{note}</span>
-            <Button onClick={onClick} label="Записаться на прием" color="light" />
+            <div className='btn_container'>
+            <Button onClick={onClick} label="Записаться на прием" color="light" /></div>
         </InfoWrapper>
     )
 }

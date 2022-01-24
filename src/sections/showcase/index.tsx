@@ -33,8 +33,13 @@ const Showcase = () => {
                 <LeftShowcase />
                 <RightShowcase />
                 <SocialNetItems
-                    color="light"
-                    position='absolute'
+                    directionScreen='row'
+                    directionMobile="column"
+                    colorScreen="dark"
+                    colorMobile="light"
+                    positionScreen='absolute'
+                    positionMobile="absolute"
+                    element="showcase"
                 />
             </div>
         </ShowcaseWrapper>

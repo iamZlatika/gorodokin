@@ -34,6 +34,7 @@ form{
         display: flex;
         margin-top: 25px;
         flex-wrap: wrap;
+        justify-content: space-between;
     
     }
     .input_group{
@@ -41,11 +42,21 @@ form{
         
     }
 }
+
+@media(max-width: 820px){
+    width: 100%;
+    form{
+        button{
+            margin: 0 auto;
+        }
+    }
+} 
 `
 
 const CheckInForm = () => {
 
     const [startDate, setStartDate] = useState(new Date());
+
     const onSubmit = (e: React.SyntheticEvent) => {
         e.preventDefault()
         console.log("submit")

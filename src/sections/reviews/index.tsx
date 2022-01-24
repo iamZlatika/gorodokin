@@ -7,9 +7,11 @@ const ReviewsWrapper = styled.div`
  font-family: "Raleway", sans-serif;
 background-color: #0E402D;
 color: #fff;
+
 .container{
     width: 80%;
     margin: auto;
+   
     .top{
         padding-top: 130px;
         display: flex;
@@ -31,12 +33,71 @@ color: #fff;
             line-height: 130%;
             }
         }
-        button{
-           height: 52px;
+       .review_btn{
+            width: 327px;
+            height: 52px;
+            border: 1px solid #FFFFFF;
+            box-sizing: border-box;
+            border-radius: 70px;
+            background-color: #0E402D;
+            font-family: Raleway;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 19px;
+            color: #fff
+       }
+       .screen_btn{
+            display: block;
         }
+        
     }
+    .mobile_btn{
+            display: none;
+        }
 }
-
+@media(max-width: 820px){
+    .container{
+    padding-bottom: 70px;
+    .top{
+        justify-content: center;
+        .screen_btn{
+            display: none;
+        }
+        .reviews-title{
+            width: 100%;
+        }
+       
+    } 
+    .mobile_btn{
+            display: block;
+            width: 327px;
+            height: 52px;
+            border: 1px solid #FFFFFF;
+            box-sizing: border-box;
+            border-radius: 70px;
+            background-color: #0E402D;
+            font-family: Raleway;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 19px;
+            color: #fff;
+            margin: 0 auto;
+            
+            
+        }
+    } 
+}  
+@media(max-width: 350px){
+    .container{
+        width: 90%;
+    .mobile_btn{
+        display: block;
+            width: 250px;
+    } 
+}
+}
 `
 
 const Reviews = () => {
@@ -46,7 +107,7 @@ const Reviews = () => {
         console.log("review")
     }
     return (
-        <ReviewsWrapper>
+        <ReviewsWrapper id="reviews">
             <div className="container">
                 <div className="top">
                     <div className="reviews-title">
@@ -54,15 +115,21 @@ const Reviews = () => {
                         <p>Я знаю как сложно выбрать доктора, который подходит именно тебе. С этими людьми мы нашли общий язык и я с удовольствием остаюсь
                             их лечащим врачем долгие годы</p>
                     </div>
-                    <Button
-                        label="Оставить отзыв"
-                        color="light"
+
+                    <button
                         onClick={(e) => onClick(e)}
-                    />
-
+                        className='review_btn screen_btn'
+                    >
+                        Оставить отзыв
+                    </button>
                 </div>
-                <Review sex="female"/>
-
+                <Review sex="female" />
+                <button
+                    onClick={(e) => onClick(e)}
+                    className='review_btn mobile_btn'
+                >
+                    Оставить отзыв
+                </button>
             </div>
         </ReviewsWrapper>
     )

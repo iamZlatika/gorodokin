@@ -18,6 +18,10 @@ h2{
 @media(max-width: 1200px){
     text-align: center;
 }
+@media(max-width: 820px){
+    text-align: start;
+ 
+}  
 `
 
 const Problems = () => {
@@ -28,7 +32,7 @@ const Problems = () => {
     }, [setProblems])
 
     return (
-        <ProblemsWrapper>
+        <ProblemsWrapper id="problems">
             <div>
                 <h2>Чем я могу помочь</h2>
                 <HelpListWrapper problems={problems} />

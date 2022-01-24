@@ -4,8 +4,8 @@ import NavbarItem from '../navbar-item'
 import Exit from '../../../components/exit/exit';
 
 const NavbarWrapper = styled.ul`
-    padding-left: 38px;
-    width: 70%;
+    /* padding-left: 38px; */
+    width: 60%;
     display: flex;
     justify-content: space-between;
     align-items: center;

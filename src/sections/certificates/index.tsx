@@ -68,12 +68,13 @@ align-items: center;
     right: 0;
 }
 @media(max-width: 1200px){
-    height: auto;
+    /* height: auto; */
     
     .cert-text{
         width: 180px    }
 }
 @media(max-width: 820px){
+     height: auto;
     .sert-title{
         justify-content: flex-start;
         h2{
@@ -121,12 +122,17 @@ align-items: center;
         width: 360px;
     }
 }
+@media(max-width: 350px){
+    .sert-title{
+        width: auto;
+    }
+}
 `
 
 const Certificate = () => {
     const [certificates, setCertificates] = useState(CERTIFICATES)
     return (
-        <CertificateWrapper>
+        <CertificateWrapper id="sertificates">
             <div className="sert-title">
                 <h2>Сертификаты</h2>
             </div>

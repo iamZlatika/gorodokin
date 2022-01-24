@@ -3,29 +3,48 @@ import React from 'react'
 import SocialNetItem from './social-net-item'
 
 interface SocialNetItemsProps {
-    color: string;
-    direction?: string;
+    colorScreen: string;
+    colorMobile?: string;
+    directionScreen?: string;
+    directionMobile: string;
     className?: string;
-    position: string;
+    positionScreen: string;
+    positionMobile: string;
+    element: string
 }
 
 const NetItems = styled.ul<SocialNetItemsProps>`
 z-index: 10;
 display: flex;
-flex-direction: ${(props) => (props.direction === "row" ? "row" : "column")};
-width: 90%;
+flex-direction: ${(props) => (props.directionScreen === "row" ? "row" : "column")};
+/* width: 90%; */
 margin-left: auto;
 margin-bottom: 156px;
-position: ${(props) => (props.position === "absolute" ? "absolute" : "static")};
-@media(max-width: 820px){}
-bottom: -100px;
-left: 85%;
+bottom: 10px;
+position: ${(props) => (props.positionScreen === "absolute" ? "absolute" : "static")};
+    @media(max-width: 820px){        
+        bottom: ${(props)=> (props.element === "showcase" ? `-450px` : `-250px`)};
+        left: 80%;
+        flex-direction: ${(props) => (props.directionMobile === "row" ? "row" : "column")}}
+        position: ${(props) => (props.positionMobile === "absolute" ? "absolute" : "static")}
+
 `
 
-const SocialNetItems: React.FC<SocialNetItemsProps> = ({ color, direction, position }) => {
+const SocialNetItems: React.FC<SocialNetItemsProps> = ({ colorScreen, colorMobile, directionScreen, positionScreen, positionMobile, directionMobile, element }) => {
     return (
-        <NetItems direction={direction} position={position} color={color}>
-            <SocialNetItem color={color} />
+        <NetItems
+            element={element}
+            directionMobile={directionMobile}
+            directionScreen={directionScreen}
+            positionScreen={positionScreen}
+            positionMobile={positionMobile}
+            colorScreen={colorScreen}
+            colorMobile={colorMobile}>
+            <SocialNetItem
+                colorScreen={colorScreen}
+                colorMobile={colorMobile}
+                direction={directionScreen}
+                element={element} />
         </NetItems>
     )
 }

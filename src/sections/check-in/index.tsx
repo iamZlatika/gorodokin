@@ -5,21 +5,28 @@ import CheckInForm from './check-in-form/CheckInForm'
 
 const CheckInWrapper = styled.div`
 width: 80%;
-margin: 120px auto;
+margin: 100px auto;
 display: flex;
 justify-content: space-between;
 img{
-    width: 60%;
+    display: block;
+    width: 50%;
     height: auto;
     border-radius: 0px 62px 0px 0px;
     object-fit: cover;
   
 }
+@media(max-width: 820px){
+    padding-bottom: 50px;
+    img{
+    display: none;
+    }
+}   
 `
 
 const CheckIn = () => {
     return (
-        <CheckInWrapper>
+        <CheckInWrapper id="contacts">
             <CheckInForm />
             <img src={ReceptionPhoto} alt="" />
         </CheckInWrapper>

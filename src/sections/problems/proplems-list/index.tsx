@@ -30,6 +30,13 @@ width: 100%!important;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
 }
+@media(max-width: 820px){
+    display: flex;
+    flex-direction: column;
+    .list-wrapper{
+        width: 100%;
+    }
+}  
 `
 
 export interface HelpListProps {
@@ -41,7 +48,7 @@ const ProblemsList: React.FC<HelpListProps> = ({ problems }) => {
         <ProblemsListWrapper>
             {
                 problems.map(({ name, title, helpSteps }) =>
-                    <div key={name}>
+                    <div key={name} className='list-wrapper'>
                         <h3>{title}</h3>
                         <ul>
                             {helpSteps.map((step, i) => <ProblemItem key={i} step={step} />)}

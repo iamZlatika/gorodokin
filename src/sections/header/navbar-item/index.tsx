@@ -6,13 +6,19 @@ interface NavbarItemProps {
 }
 
 const NavbarItemWrapper = styled.li`
-  font-family: "Raleway", sans-serif;
-  display: block;
+    display: block;
+  
+  cursor: pointer;
+  a{
+    font-family: "Raleway", sans-serif;
   list-style: none;
   font-size: 16px;
   font-weight: 300;
   line-height: 19px;
   color: #fff;
+    text-decoration: none;
+
+  }
   @media (max-width: 820px){
       padding-top: 70px;
       font-size: 20px;
@@ -22,9 +28,12 @@ const NavbarItem: React.FC<NavbarItemProps> = () => {
     return (
         <>
             {NAV_ITEMS_RUS.map((navItem, i) =>
-                <NavbarItemWrapper key={i}>
-                    {navItem}
-                </NavbarItemWrapper>)}
+                <NavbarItemWrapper
+                    key={i}>
+                    <a href={`#${navItem.id}`}>
+                        {navItem.label}</a>
+                </NavbarItemWrapper>
+            )}
         </>
     )
 }

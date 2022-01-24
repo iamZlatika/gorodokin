@@ -10,27 +10,35 @@ interface ReviewProps {
 
 const ReviewStyled = styled.div`
 display: flex;
+flex-direction: row;
 justify-content: space-between;
 position: relative;
 padding-bottom: 200px;
 align-items: center;
+
 .user_icon{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
     margin-left: 10px;
     position: relative;
     margin-right: 60px;
+    height: 200px;
     img{
     z-index: 10;
-    position: relative;
+    position: absolute;
+    transform: rotate(-180deg);
+    left: 10px;
+    bottom: -160px;
     }
     .under{
     width: 221px;
     height: 64px;
     background: #FF8427;
     border-radius: 22px 0px 0px 0px;
-    position: absolute;
+    /* position: absolute; */
     transform: rotate(-180deg);
-    left: 25px;
-    bottom: -12px;
+    
     z-index: 1
     }
 }
@@ -59,6 +67,17 @@ align-items: center;
         line-height: 130%;
     }
 }
+
+@media(max-width: 820px){
+    
+    padding-bottom: 50px;
+    .user_icon{
+       margin: 0;
+    }
+    .user_info{
+        padding-top: 50px;
+    }
+}  
 `
 const Review: React.FC<ReviewProps> = ({ sex }) => {
     return (
@@ -68,17 +87,24 @@ const Review: React.FC<ReviewProps> = ({ sex }) => {
                 color="white"
                 direction="left"
             />
-            <div className="user_icon">
-                <img src={femaleUser} alt="" />
-                <div className="under"></div>
+            <div>
+                <div className="user_icon">
+
+
+                    <div className="under">
+                        <img src={femaleUser} alt="" />
+                    </div>
+
+                </div>
+                <div className="user_info">
+
+                    <h3>Кристина Никитина</h3>
+                    <span>27 лет</span>
+                    <p>Антон - очень профессиональный психолог. У меня были проблемы с самоопредитением. Какие-то чувства тревоги и дискомфорта. У меня было деприссивное состояние. Антон мне помог, я полувствовала себя легче, более уверенной. Он помог в прямом смысле найти смысл жизни.</p>
+
+                </div>
             </div>
-            <div className="user_info">
-
-                <h3>Кристина Никитина</h3>
-                <span>27 лет</span>
-                <p>Антон - очень профессиональный психолог. У меня были проблемы с самоопредитением. Какие-то чувства тревоги и дискомфорта. У меня было деприссивное состояние. Антон мне помог, я полувствовала себя легче, более уверенной. Он помог в прямом смысле найти смысл жизни.</p>
-
-            </div> <Arrow
+            <Arrow
                 color="white"
                 direction="right"
                 className="arrow_right"

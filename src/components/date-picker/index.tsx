@@ -7,10 +7,11 @@ import { ru, enUS } from 'date-fns/locale';
 registerLocale("ru", ru);
 registerLocale("en", enUS)
 const DatePickerComponentWrapper = styled.div`
-width: 150px!important;
+width: 40%!important;
 display: flex;
+justify-content: space-between;
 flex-direction: column;
-margin-right: auto;
+margin-right: 0;
 margin-bottom: 15px;
 
 label{
@@ -20,7 +21,7 @@ label{
 }
 div{
     input{
-        width: 150px!important;
+        width: 100%!important;
         padding-left: 5px;
         height: 30px!important;
         border: #C9C9C9 1px solid;
@@ -29,7 +30,7 @@ div{
     }
 }
 .react-datepicker-wrapper{
-    width: 150px!important;
+    width: 100%!important;
     margin-top: 10px;
     height: 30px!important;
     

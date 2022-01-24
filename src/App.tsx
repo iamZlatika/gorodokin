@@ -7,7 +7,7 @@ import Problems from './sections/problems'
 import AboutMe from './sections/about-me'
 import Certificate from './sections/certificates'
 import Footer from './sections/footer'
-import CheckIn from './sections/check-in/CheckIn'
+import CheckIn from './sections/check-in'
 import Reviews from './sections/reviews'
 
 
@@ -16,7 +16,6 @@ const App = () => {
         <div>
             <Header />
             <Showcase />
-            {/* <SocialNetItems color="dark" /> */}
             <AboutMe />
             <Problems />
             <Certificate />

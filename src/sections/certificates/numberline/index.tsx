@@ -72,6 +72,13 @@ height: 600px;
     }
     }
 }
+@media(max-width: 350px){
+    .side-line{
+        .line{
+            width: 80px;
+        }
+    }
+}
 `
 
 const NumberLine = () => {
