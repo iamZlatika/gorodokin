@@ -9,21 +9,23 @@ interface IFormReview {
 
 const FormWrapper = styled.form`
 position: absolute;
-
-height: 509px;
-z-index: 10;
+width: 70%;
+height: 80%;
+margin: 0 auto;
+padding: 0;
+z-index: 20;
 border-radius: 0px 44px 0px 0px;
 background: #FFFFFF;
-left: 5%;
+left: 15%;
 top: 7%;
 font-family: "Raleway", sans-serif;
 display: flex;
     img{
-        width: 433px;
+        width: 40%;
+        object-fit: cover;
     }
-    container{}
-    width: 
-    padding: 32px 32px 37px 47px;
+  
+    
         .title{
              margin-bottom: 47px;
              display: flex;

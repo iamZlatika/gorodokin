@@ -14,7 +14,7 @@ interface SocialNetItemsProps {
 }
 
 const NetItems = styled.ul<SocialNetItemsProps>`
-z-index: 10;
+z-index: 5;
 display: flex;
 flex-direction: ${(props) => (props.directionScreen === "row" ? "row" : "column")};
 /* width: 90%; */
