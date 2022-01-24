@@ -52,10 +52,14 @@ align-items: center;
 .cert-pic{
     display: flex;
     flex-direction: row;
+    align-items: center;
    } 
 .cert-text{
     max-width: 250px;
     text-align: center;
+    h3{
+        display: none;
+    }   
 }   
 } 
 }
@@ -71,7 +75,8 @@ align-items: center;
     /* height: auto; */
     
     .cert-text{
-        width: 180px    }
+        width: 180px
+    }
 }
 @media(max-width: 820px){
      height: auto;
@@ -126,21 +131,21 @@ align-items: center;
     .sert-title{
         width: auto;
     }
+
 }
 `
 
 const Certificate = () => {
     const [certificates, setCertificates] = useState(CERTIFICATES)
     return (
-        <CertificateWrapper id="sertificates">
+        <CertificateWrapper id="certificates">
             <div className="sert-title">
                 <h2>Сертификаты</h2>
             </div>
             <NumberLine />
             <div className="time_line">
                 {certificates.map((cert, idx) => cert.status &&
-                    <div
-                        className="cert-item"
+                    <div className="cert-item"
                         key={idx}>
                         <h4>{cert.year}</h4>
                         <div className="cert-pic">

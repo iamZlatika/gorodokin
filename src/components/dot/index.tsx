@@ -18,7 +18,6 @@ transform: translateX(0);
 const Dot = () => {
     return (
         <DotStyled>
-            
         </DotStyled>
     )
 }
