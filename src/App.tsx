@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./index.css"
 import Header from './sections/header'
 import Showcase from './sections/showcase'
@@ -9,9 +9,12 @@ import Certificate from './sections/certificates'
 import Footer from './sections/footer'
 import CheckIn from './sections/check-in'
 import Reviews from './sections/reviews'
+import Modal from '../src/components/modal'
+import FormReview from './components/form-review'
 
 
 const App = () => {
+    const [isReviewOpen, setModalOpen] = useState<boolean>(true);
     return (
         <div>
             <Header />
@@ -20,8 +23,13 @@ const App = () => {
             <Problems />
             <Certificate />
             <Reviews />
+            {isReviewOpen &&
+                <Modal onClose={() => setModalOpen(false)}>
+                    <FormReview />
+                </Modal>}
             <CheckIn />
             <Footer />
+
         </div>
     )
 }
