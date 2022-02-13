@@ -10,7 +10,7 @@
   "include": [
     "src/**/*",
     "css-modules.d.ts"
-  ],
+, "emailkey.ts"  ],
   "exclude": [
     "node_modules",
     "**/*.spec.ts"

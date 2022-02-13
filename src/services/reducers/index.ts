@@ -1,4 +1,5 @@
-import { TOGGLE_LANGUAGE, OPEN_REVIEW_MODAL } from "../actions"
+import { TOGGLE_LANGUAGE, OPEN_REVIEW_MODAL, CLOSE_REVIEW_MODAL } from "../actions"
+import {ActionsTypes} from '../actions'
 
 interface initialStateProps {
     language: string,
@@ -12,18 +13,24 @@ const initialState: initialStateProps = {
     review: {},
 }
 
-export const rootReducer = (state = initialState, action: any) => {
+export const rootReducer = (state = initialState, action: ActionsTypes) => {
     switch (action.type) {
         case TOGGLE_LANGUAGE: {
             return {
                 ...state,
-                language: action.payload
+                // language: action.payload
             }
         }
         case OPEN_REVIEW_MODAL: {
             return {
                 ...state,
-                reviewStatus: true
+                reviewStatus: true,
+            }
+        }
+        case CLOSE_REVIEW_MODAL: {
+            return {
+                ...state,
+                reviewStatus: false,
             }
         }
         default: {

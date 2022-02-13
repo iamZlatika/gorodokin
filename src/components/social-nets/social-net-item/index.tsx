@@ -7,12 +7,14 @@ import Whatsapp from "../../../images/icons/Whatsapp"
 import styled from '@emotion/styled'
 
 
+
 interface SocialNetItemProps {
     colorMobile: string
     colorScreen: string
     className?: string
     direction: string
     element: string
+
 }
 const NetItemWrapper = styled.li<SocialNetItemProps>`
 list-style: none;
@@ -40,20 +42,22 @@ svg{
 }
 `
 
-const SocialNetItem: React.FC<SocialNetItemProps> = ({ direction, element, colorScreen, colorMobile }) => {
+const SocialNetItem: React.FC<SocialNetItemProps> = ({ direction, element, colorScreen, colorMobile, link }) => {
     const nets = [<Facebook />, <Insta />, <Viber />, <Telegram />, <Whatsapp />]
     return (
         <>
             {nets.map((item, i) =>
-                <NetItemWrapper
-                    element={element}
-                    key={i}
-                    colorScreen={colorScreen}
-                    colorMobile={colorMobile}
-                    direction={direction}
-                >
-                    {item}
-                </NetItemWrapper>)}
+                <a href="https://www.instagram.com/gorodokin.md/?hl=ru">
+                    <NetItemWrapper
+                        element={element}
+                        key={i}
+                        colorScreen={colorScreen}
+                        colorMobile={colorMobile}
+                        direction={direction}
+
+                    >
+                        {item}
+                    </NetItemWrapper></a>)}
         </>
     )
 }

@@ -11,9 +11,15 @@ import CheckIn from './sections/check-in'
 import Reviews from './sections/reviews'
 import Modal from '../src/components/modal'
 import FormReview from './components/form-review'
+import { useDispatch } from "react-redux";
+import { CLOSE_REVIEW_MODAL } from "./services/actions"
+import { useSelector } from './services/hooks'
 
 
 const App = () => {
+
+    const dispatch = useDispatch();
+    const reviewStatus = useSelector((store) => store.reviewStatus)
     const [isReviewOpen, setModalOpen] = useState<boolean>(true);
     return (
         <div>
@@ -23,14 +29,14 @@ const App = () => {
             <Problems />
             <Certificate />
             <Reviews />
-            {isReviewOpen &&
-                <Modal onClose={() => setModalOpen(false)}>
-                    <FormReview />
+            {reviewStatus &&
+                <Modal onClose={() => dispatch({ type: CLOSE_REVIEW_MODAL })}>
+                    <FormReview onClose={() => setModalOpen(false)} />
                 </Modal>}
             <CheckIn />
             <Footer />
 
-        </div>
+        </div >
     )
 }
 

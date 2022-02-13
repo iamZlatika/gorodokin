@@ -2,6 +2,8 @@ import styled from '@emotion/styled'
 import React from 'react'
 import Button from '../../components/buttons/Button'
 import Review from './review'
+import { useDispatch } from "react-redux";
+import {OPEN_REVIEW_MODAL} from '../../services/actions'
 
 const ReviewsWrapper = styled.div`
  font-family: "Raleway", sans-serif;
@@ -49,6 +51,7 @@ color: #fff;
        }
        .screen_btn{
             display: block;
+            cursor: pointer;
         }
         
     }
@@ -101,10 +104,10 @@ color: #fff;
 `
 
 const Reviews = () => {
-
+    const dispatch = useDispatch();
     const onClick = (e: React.SyntheticEvent) => {
         e.preventDefault()
-        console.log("review")
+        dispatch({type: OPEN_REVIEW_MODAL})
     }
     return (
         <ReviewsWrapper id="reviews">
