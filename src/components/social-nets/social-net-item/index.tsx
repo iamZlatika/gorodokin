@@ -42,22 +42,35 @@ svg{
 }
 `
 
-const SocialNetItem: React.FC<SocialNetItemProps> = ({ direction, element, colorScreen, colorMobile, link }) => {
-    const nets = [<Facebook />, <Insta />, <Viber />, <Telegram />, <Whatsapp />]
+const SocialNetItem: React.FC<SocialNetItemProps> = ({ direction, element, colorScreen, colorMobile }) => {
+    const nets = [
+
+        { link: 'https://www.facebook.com/gorodokin.md/', icon: <Facebook /> },
+        { link: 'https://www.instagram.com/gorodokin.md/?hl=ru', icon: <Insta /> },
+        { link: 'https://www.instagram.com/gorodokin.md/?hl=ru', icon: <Viber /> },
+        { link: 'https://t.me/gorodokinmd', icon: <Telegram /> },
+        { link: 'https://api.whatsapp.com/send?phone=380996199029', icon: <Whatsapp /> }
+    ]
+
     return (
         <>
-            {nets.map((item, i) =>
-                <a href="https://www.instagram.com/gorodokin.md/?hl=ru">
-                    <NetItemWrapper
-                        element={element}
-                        key={i}
-                        colorScreen={colorScreen}
-                        colorMobile={colorMobile}
-                        direction={direction}
-
+            {
+                nets.map((net, idx) =>
+                    <a
+                        key={idx}
+                        href={net.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
-                        {item}
-                    </NetItemWrapper></a>)}
+                        <NetItemWrapper
+                            element={element}
+                            colorScreen={colorScreen}
+                            colorMobile={colorMobile}
+                            direction={direction}
+                        >
+                            {net.icon}
+                        </NetItemWrapper></a>)
+            }
         </>
     )
 }
