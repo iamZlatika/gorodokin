@@ -19,14 +19,17 @@ const RightSection = styled.div`
 display: flex;
 align-items: center;
 width: 30%;
-h2{
-   color: #fff;
-font-family: 'Tenor Sans', sans-serif;
-font-size: 16px;
-font-weight: 400;
-line-height: 19px;
-padding-right: 35px; 
+
+    a{
+    text-decoration: none;  
+    color: #fff;
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    padding-right: 35px; 
 }
+
 
 
 `
@@ -38,7 +41,7 @@ const Header = () => {
             <Container>
                 <Navbar />
                 <RightSection>
-                    <h2>+380996199029</h2>
+                    <a href="tel:+380996199029">+380996199029</a>
                     <Localazer />
                 </RightSection>
             </Container>
