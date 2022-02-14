@@ -18,6 +18,7 @@ width: 100vw;
 height: 100vh;
 justify-content: center;
 align-items: center;
+z-index: 3;
 `
 
 const ModalOverlay: React.FC<IModal> = ({ children, onClose }) => {

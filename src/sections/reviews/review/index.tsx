@@ -25,7 +25,7 @@ align-items: center;
     margin-right: 60px;
     height: 200px;
     img{
-    z-index: 10;
+    z-index: 2;
     position: absolute;
     transform: rotate(-180deg);
     left: 10px;

@@ -17,7 +17,7 @@ const NavbarWrapper = styled.ul`
     align-items: flex-start;
     justify-content: flex-start;
     right: -350px;
-    z-index: 10;
+    z-index: 2;
     background-color: #0D402D;
     height: 100%;
     top: 0%;

@@ -1,9 +1,12 @@
 import Button from "../buttons/Button";
-import React from "react"
+import React, { useRef } from "react"
 import styled from "@emotion/styled";
 import reviewPhoto from '../../images/photo/photo_04.jpg'
-import { faCoffee, faXmark } from '@fortawesome/free-solid-svg-icons'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import emailjs from '@emailjs/browser';
+import { useDispatch } from "react-redux";
+import { CLOSE_REVIEW_MODAL } from "../../services/actions"
 
 interface IFormReview {
     onClose: (e: React.MouseEvent<HTMLElement>) => void,
@@ -105,27 +108,31 @@ display: flex;
 `
 
 const FormReview: React.FC<IFormReview> = ({ onClose }) => {
-    const onXClose = (e: React.MouseEvent<HTMLElement>) => {
-        console.log("click")
-        if (e.target === e.currentTarget) {
-            onClose(e);
-        }
-    }
+    const form = useRef();
+    const dispatch = useDispatch()
 
-    const sendReview = (e: React.FormEvent) => {
+    const sendReview = async (e: React.FormEvent) => {
         e.preventDefault()
+        await emailjs.sendForm(`service_k3c5za7`, "template_4iau6fp", form.current, "user_fgTATP9b22WUPocctf0YA")
+            .then((result) => {
+                console.log("Message Sent, We will get back to you shortly", result.text);
+            },
+                (error) => {
+                    console.log("An error occurred, Please try again", error.text);
+                });
+        dispatch({ type: CLOSE_REVIEW_MODAL })
     }
 
     return (
-        <FormWrapper>
+        <FormWrapper ref={form}>
             <img src={reviewPhoto} alt="" />
             <div className="container">
                 <div className="form_input_group">
                     <div className="title">
                         <h2>Оставить отзыв</h2>
-                        <div 
-                        className="icon"
-                        onClick={onClose}
+                        <div
+                            className="icon"
+                            onClick={onClose}
                         >
                             <FontAwesomeIcon
                                 icon={faXmark}
@@ -137,35 +144,41 @@ const FormReview: React.FC<IFormReview> = ({ onClose }) => {
                         <label htmlFor="male">М</label>
                         <input
                             type="radio"
-                            id="male" name="sex"
-                            className="sex_checkbox" />
+                            id="male"
+                            name="gender"
+                            value="male"
+                            className="gender_checkbox" />
                         <label htmlFor="female">Ж</label>
                         <input
                             type="radio"
                             id="female"
-                            name="sex"
-                            className="sex_checkbox" />
+                            name="gender"
+                            value="female"
+                            className="gender_checkbox" />
 
                     </div>
                     <div className="user_name review_input">
                         <label htmlFor="name">Имя</label>
                         <input
                             id="name"
-                            placeholder="Имя" />
+                            placeholder="Имя"
+                            name="name" />
                     </div>
                     <div className="user_age review_input">
                         <label htmlFor="age">Возраст</label>
                         <input
                             id="age"
                             type="number"
-                            placeholder="0" />
+                            placeholder="0"
+                            name="age" />
                     </div>
                     <div className="user_review review_input">
                         <label htmlFor="review">Ваш отзыв</label>
                         <textarea
-                            name=""
+                            name="review"
                             id="review"
                             placeholder="Отзыв"
+
                         ></textarea>
                     </div>
                 </div>
