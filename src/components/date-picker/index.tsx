@@ -4,6 +4,7 @@ import { default as DatePicker, registerLocale } from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css";
 import { ru, enUS } from 'date-fns/locale';
 
+
 registerLocale("ru", ru);
 registerLocale("en", enUS)
 const DatePickerComponentWrapper = styled.div`
@@ -37,9 +38,12 @@ div{
 }
 `
 interface DatePickerComponentProps {
-    selected: Date
-    onChange: (date: Date) => void
-    dateFormat: string
+    required?: boolean
+    name: string
+    value?: string | null
+    selected?: Date
+    onChange: (e: any) => void
+    dateFormat?: string
     id: string
     showTimeSelect?: boolean
     showTimeSelectOnly?: boolean,
@@ -47,6 +51,7 @@ interface DatePickerComponentProps {
     filterTime?: () => void
     maxDate?: Date
     minDate?: Date
+    includeTimes?: Date[]
     showYearDropdown?: boolean
     yearDropdownItemNumber?: boolean
     scrollableYearDropdown?: boolean
@@ -54,14 +59,16 @@ interface DatePickerComponentProps {
     timeCaption?: string
     locale?: string
     label: string
+    filterDate?: (date: Date) => boolean
 }
-const DatePickerComponent: React.FC<DatePickerComponentProps> = ({ selected, onChange, dateFormat, id, label, showTimeSelectOnly, showTimeSelect, locale, timeCaption, timeIntervals}) => {
+const DatePickerComponent: React.FC<DatePickerComponentProps> = ({ selected, onChange, dateFormat, id, label, showTimeSelectOnly, showTimeSelect, locale, timeCaption, timeIntervals, filterDate, minDate, includeTimes, value }) => {
 
 
     return (
-        <DatePickerComponentWrapper>
+        <DatePickerComponentWrapper >
             <label htmlFor="">{label}</label>
             <DatePicker
+                value={value}
                 timeIntervals={timeIntervals}
                 id={id}
                 selected={selected}
@@ -69,9 +76,11 @@ const DatePickerComponent: React.FC<DatePickerComponentProps> = ({ selected, onC
                 dateFormat={dateFormat}
                 showTimeSelectOnly={showTimeSelectOnly}
                 showTimeSelect={showTimeSelect}
-                locale={locale}
+                locale="ru"
                 timeCaption={timeCaption}
-                
+                filterDate={filterDate}
+                minDate={minDate}
+                includeTimes={includeTimes}
             />
         </DatePickerComponentWrapper>
     )

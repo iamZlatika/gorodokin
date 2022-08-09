@@ -12,14 +12,17 @@ height: 619px;
 font-family: 'Tenor Sans', sans-serif;
 font-weight: 400;
     .wrapper{
-        display: flex;
-        flex-direction: row;
+        /* display: flex;
+        flex-direction: row; */
         width: 90%;
         margin-left: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr
     }
 
 @media(max-width: 820px){
     .wrapper{
+    display: flex;
     flex-direction: column;
     width: 100%;
     }
@@ -33,13 +36,7 @@ const Showcase = () => {
                 <LeftShowcase />
                 <RightShowcase />
                 <SocialNetItems
-                    directionScreen='row'
-                    directionMobile="column"
-                    colorScreen="dark"
-                    colorMobile="light"
-                    positionScreen='absolute'
-                    positionMobile="absolute"
-                    element="showcase"
+                    element="showcase-screen"
                 />
             </div>
         </ShowcaseWrapper>

@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import React from 'react'
 import Dot from '../../../components/dot'
 import Line from '../../../components/line'
-import { CERTIFICATES } from '../../../data/certificates'
+import { certificates } from '../../../data/certificates'
 
 
 const NumberLineStyled = styled.div`
@@ -84,7 +84,7 @@ height: 600px;
 const NumberLine = () => {
     return (
         <NumberLineStyled>
-            {CERTIFICATES.map((cert, idx) => cert.status &&
+            {certificates.map((cert, idx) => cert.status &&
                 <div
                     className="side-line"
                     key={idx}>

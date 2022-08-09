@@ -1,34 +1,48 @@
 import styled from '@emotion/styled'
 import React from 'react'
-import { CONTACTS_RUS } from '../../../data/contacts'
+import { contacts } from '../../../data/contacts'
 import SocialNetItems from '../../../components/social-nets'
+import { useSelector } from '../../../services/hooks'
+import { localiseString } from '../../../services/services'
 
 const ContactsWrapper = styled.div`
-display: flex;
-flex-direction: column;
+display: grid;
+margin-bottom: 60px;
 width:50%;
+h2{
+    font-family: "Raleway", sans-serif;
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 21px;  
+}
 .contacts{
-    position: relative;
-    margin-top: 58px;
-    column-gap: 5%;
-    row-gap: 15%;
+    margin-top:30px;
     display: grid;
-    grid-template-rows: 40px 40px;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap:14px;
+    align-items: center;
+    position: relative;
     font-size: 18px;
-    line-height: 21px;
+    line-height: 16px;
     font-family: "Raleway", sans-serif;
     &:nth-child(even){
         font-family: 'Tenor Sans', sans-serif;
     }
+    .contacts-item{
+           margin-bottom: 0;
+           text-decoration: none;  
+           color: #fff;
+       
+   }
 
 }
-ul{
-    margin-top: 14px;
-    margin-left: 0;
-}
 @media(max-width: 820px){
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    margin-bottom: 0;
     h2{
         font-family: "Raleway", sans-serif;
         font-style: normal;
@@ -37,38 +51,35 @@ ul{
         line-height: 23px;  
 }
     .contacts{
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    margin-top:22px;
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+      margin-top:22px;
+      align-items: flex-start;
+      grid-template-rows: 100px 100px 100px 100px 100px;
+      row-gap: 0; 
+    
+      .contacts-item{
+        margin-bottom: 30px;
+      }
     }
-    div{
-        .contacts-item{
-            margin-bottom: 14px;
-        }
-    }
+    
 }   
 `
 
 
 const Contacts = () => {
 
+    const language = useSelector((store: any) => store.language);
     return (
         <ContactsWrapper>
-            <h2>Контакты</h2>
+            <h2>{localiseString("nav:contacts", language)}</h2>
             <div className="contacts">
-                <div >
-                    <div className='contacts-item'>{CONTACTS_RUS.name}</div>
-                    <div className='contacts-item'>{CONTACTS_RUS.phone}</div>
-                    <div className='contacts-item'>{CONTACTS_RUS.town}</div>
-                </div>
+                <div className='contacts-item'>{localiseString(contacts.name, language)}</div>
+                 <a className='contacts-item' href="tel:+380996199029">+380996199029</a>
+                <div className='contacts-item'>{localiseString(contacts.town, language)}</div>
                 <SocialNetItems
-                    colorScreen="light"
-                    positionScreen="static"
-                    positionMobile="absolute"
-                    directionScreen="row"
-                    directionMobile="column"
-                    element="footer"
+                    element="footer-screen"
                 />
             </div>
         </ContactsWrapper>

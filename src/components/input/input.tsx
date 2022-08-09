@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 import React from 'react'
 
+
 const InputStyled = styled.div`
 position: relative;
 height: 50px;
@@ -54,17 +55,28 @@ label{
         transition: all 0.3s ease;
     }
 }
+label.invalid-input{
+    border-bottom: 1px solid #ec2828; 
+    &::after{
+        border-bottom: 2px solid #e73819;
+    }
+  span{
+        color:#ec2828;
+    }
+}
 `
 interface InputProps {
+    validation: boolean
     type: string
     name: string
     required?: boolean
     label: string
     role: string
     autocomplete?: string
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-const Input: React.FC<InputProps> = ({ type, name, required, label, role, autocomplete }) => {
+const Input: React.FC<InputProps> = ({ onChange, type, name, required, label, role, validation }) => {
     return (
         <InputStyled>
             <input
@@ -72,9 +84,11 @@ const Input: React.FC<InputProps> = ({ type, name, required, label, role, autoco
                 type={type}
                 name={name}
                 required={required}
-              
+                onChange={onChange}
             />
-            <label htmlFor={name}>
+            <label
+                htmlFor={name}
+                className={`${validation && `invalid-input`}`}>
                 <span>{label}</span>
             </label>
 

@@ -1,6 +1,8 @@
 import styled from '@emotion/styled'
 import React from 'react'
-import { NAV_ITEMS_RUS } from '../../../data/navigation'
+import { navItems } from '../../../data/navigation'
+import { useSelector } from '../../../services/hooks'
+import { localiseString } from '../../../services/services'
 
 
 const NavigationWrapper = styled.footer`
@@ -13,31 +15,34 @@ h2{
 font-style: normal;
 font-weight: 600;
 font-size: 20px;
-line-height: 23px;  
+line-height: 21px;  
 }
 ul{
     list-style: none;
     display: flex;
     flex-direction: row;
-    margin-top: 58px;
+    margin-top: 36px;
     font-size: 18px;
-    line-height: 21px;
+    line-height: 16px;
     font-family: "Raleway", sans-serif;
     flex-wrap: wrap;
     justify-content: space-between;
    a{
        color: #fff;
        text-decoration: none;
+       margin-bottom: 30px;
     li{
-        margin-bottom: 20px;
+        /* margin-bottom: 20px; */
         white-space: nowrap;
         cursor: pointer;
+       
     }
 }
 }
 @media(max-width: 820px){
     padding-left: 0;
-    margin-top: 40px;
+    /* margin-top: 40px; */
+    width: 100%;
     ul{
         flex-direction: column;
         margin: 22px 0;
@@ -45,13 +50,14 @@ ul{
 }
 `
 const Navigation = () => {
+    const language = useSelector((store: any) => store.language);
     return (
         <NavigationWrapper>
-            <h2>Навигация</h2>
+            <h2>{localiseString("interface:navigation", language)}</h2>
             <ul>
 
-                {NAV_ITEMS_RUS.map(item => <a href={`#${item.id}`}>
-                    <li>{item.label}</li></a>)}
+                {navItems.map(item => <a href={`#${item.id}`}>
+                    <li>{localiseString(item.label, language)}</li></a>)}
             </ul>
 
         </NavigationWrapper>

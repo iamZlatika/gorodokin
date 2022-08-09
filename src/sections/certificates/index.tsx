@@ -1,9 +1,11 @@
 import styled from '@emotion/styled'
-import React, { useState } from 'react'
+import React from 'react'
 import Arrow from '../../components/arrow'
 import Dot from '../../components/dot'
 import Line from '../../components/line'
-import { CERTIFICATES } from '../../data/certificates'
+import { certificates } from '../../data/certificates'
+import { useSelector } from '../../services/hooks'
+import { localiseString } from '../../services/services'
 import NumberLine from './numberline'
 
 const CertificateWrapper = styled.div`
@@ -136,18 +138,19 @@ align-items: center;
 `
 
 const Certificate = () => {
-    const [certificates, setCertificates] = useState(CERTIFICATES)
+    const language = useSelector((store: any) => store.language);
+
     return (
         <CertificateWrapper id="certificates">
             <div className="sert-title">
-                <h2>Сертификаты</h2>
+                <h2>{localiseString("interface:certificates", language)}</h2>
             </div>
             <NumberLine />
             <div className="time_line">
-                {certificates.map((cert, idx) => cert.status &&
+                {certificates.map(({text, year, status}, idx) => status &&
                     <div className="cert-item"
                         key={idx}>
-                        <h4>{cert.year}</h4>
+                        <h4>{year}</h4>
                         <div className="cert-pic">
                             <Line />
                             <Dot />
@@ -155,8 +158,8 @@ const Certificate = () => {
                         </div>
                         <div
                             className="cert-text">
-                            <h3>{cert.year}</h3>
-                            <p>{cert.textRUS}</p>
+                            <h3>{year}</h3>
+                            <p>{localiseString(text, language)}</p>
                         </div>
                     </div>)}
 

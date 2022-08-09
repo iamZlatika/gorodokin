@@ -17,7 +17,7 @@ const ProblemItemStyle = styled.li`
 
 `
 const ProblemItem: React.FC<ProblemItemProps> = ({ step }) => {
-    return <ProblemItemStyle>
+    return <ProblemItemStyle >
         {step}
     </ProblemItemStyle>
 }

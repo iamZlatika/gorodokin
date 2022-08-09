@@ -1,13 +1,13 @@
-interface cotnacts {
+interface ICotnacts {
     name: string,
     phone: string,
     town: string
 }
 
-export const CONTACTS_RUS :cotnacts = 
-    {name: "Антон Городокин",
+export const contacts :ICotnacts = 
+    {name: "contacts:name",
     phone: "+380996199029", 
-    town: "г. Запорожье" }
+    town: "contacts:town" }
    
 
 

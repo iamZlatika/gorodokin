@@ -4,6 +4,8 @@ import Button from '../../components/buttons/Button'
 import Review from './review'
 import { useDispatch } from "react-redux";
 import {OPEN_REVIEW_MODAL} from '../../services/actions'
+import { useSelector } from '../../services/hooks';
+import { localiseString } from '../../services/services';
 
 const ReviewsWrapper = styled.div`
  font-family: "Raleway", sans-serif;
@@ -104,6 +106,7 @@ color: #fff;
 `
 
 const Reviews = () => {
+    const language = useSelector((store: any) => store.language);
     const dispatch = useDispatch();
     const onClick = (e: React.SyntheticEvent) => {
         e.preventDefault()
@@ -114,16 +117,15 @@ const Reviews = () => {
             <div className="container">
                 <div className="top">
                     <div className="reviews-title">
-                        <h3>Отзывы</h3>
-                        <p>Я знаю как сложно выбрать доктора, который подходит именно тебе. С этими людьми мы нашли общий язык и я с удовольствием остаюсь
-                            их лечащим врачем долгие годы</p>
+                        <h3>{localiseString("interface:reviews", language)}</h3>
+                        <p>{localiseString("interface:reviewsEpigraph", language)}</p>
                     </div>
 
                     <button
                         onClick={(e) => onClick(e)}
                         className='review_btn screen_btn'
                     >
-                        Оставить отзыв
+                       {localiseString("button:review", language)}
                     </button>
                 </div>
                 <Review sex="female" />
@@ -131,7 +133,7 @@ const Reviews = () => {
                     onClick={(e) => onClick(e)}
                     className='review_btn mobile_btn'
                 >
-                    Оставить отзыв
+                    {localiseString("button:review", language)}
                 </button>
             </div>
         </ReviewsWrapper>

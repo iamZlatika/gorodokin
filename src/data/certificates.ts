@@ -1,54 +1,46 @@
-interface Certificates {
-    year: number,
-    textRUS: string,
-    textEN: string,
-    status: boolean
+interface ICertificates {
+  year: number;
+  text: string;
+  status: boolean;
+  index?: number;
+  source?: string;
 }
 
+export const certificates: ICertificates[] = [
+  {
+    year: 2020,
+    text: "УРУРУРУ ЛАЛАЛА АЛО ГАПША ДОКТОР АНТОН МОЛОДЕЦ",
+    status: false,
+  },
+  {
+    year: 2019,
+    text: "interface:certificates19",
+    status: true,
+  },
+  {
+    year: 2018,
+    text: "interface:certificates18",
+    status: true,
+  },
+  {
+    year: 2017,
+    text: "interface:certificates17",
+    status: true,
+  },
+  {
+    year: 2016,
+    text: "УРУРУРУ ЛАЛАЛА АЛО ГАПША ДОКТОР АНТОН МОЛОДЕЦ",
+    status: false,
+  },
+  {
+    year: 2015,
+    text: "УРУРУРУ ЛАЛАЛА АЛО ГАПША ДОКТОР АНТОН МОЛОДЕЦ",
 
-export const CERTIFICATES: Certificates[] = [
-    {
-        year: 2020, 
-        textRUS: "УРУРУРУ ЛАЛАЛА АЛО ГАПША ДОКТОР АНТОН МОЛОДЕЦ",
-        textEN: "URURU LALALA ALO GAPSHA DOKTOR ANTON MOLODEC",
-        status: false,
-    },
-    {
-        year: 2019, 
-        textRUS: "закончил аспирантуру по специальности «психиатрия», защитил диссертационное исследование, получил степень доктора философии (PhD).",
-        textEN: "URURU LALALA ALO GAPSHA DOKTOR ANTON MOLODEC",
-        status: true,
-    },
-    {
-        year: 2018, 
-        textRUS: "штатный преподаватель кафедры психиатрии, психотерапии, общей и медицинской психологии, наркологии и сексологии.",
-        textEN: "URURU LALALA ALO GAPSHA DOKTOR ANTON MOLODEC",
-        status: true,
-    },
-    {
-        year: 2017, 
-        textRUS: "представил собственное исследование на всемирном конгрессе ECNP в Копенгагене (Дания).",
-        textEN: "URURU LALALA ALO GAPSHA DOKTOR ANTON MOLODEC",
-        status: true,
-    },
-    {
-        year: 2016, 
-        textRUS: "УРУРУРУ ЛАЛАЛА АЛО ГАПША ДОКТОР АНТОН МОЛОДЕЦ",
-        textEN: "URURU LALALA ALO GAPSHA DOKTOR ANTON MOLODEC",
-        status: false,
-    },
-    {
-        year: 2015, 
-        textRUS: "УРУРУРУ ЛАЛАЛА АЛО ГАПША ДОКТОР АНТОН МОЛОДЕЦ",
-        textEN: "URURU LALALA ALO GAPSHA DOKTOR ANTON MOLODEC",
-        status: false,
-    },
-    {
-        year: 2014, 
-        textRUS: "УРУРУРУ ЛАЛАЛА АЛО ГАПША ДОКТОР АНТОН МОЛОДЕЦ",
-        textEN: "URURU LALALA ALO GAPSHA DOKTOR ANTON MOLODEC",
-        status: false,
-    },
-  
- 
-]
+    status: false,
+  },
+  {
+    year: 2014,
+    text: "УРУРУРУ ЛАЛАЛА АЛО ГАПША ДОКТОР АНТОН МОЛОДЕЦ",
+    status: false,
+  },
+];

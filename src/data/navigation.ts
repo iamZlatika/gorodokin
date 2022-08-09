@@ -1,6 +1,6 @@
-export const NAV_ITEMS_RUS = [
-    {label: "Обо мне", id: "about_me"},
-    {label: "Сертификаты", id: "certificates"},
-    {label: "Отзывы", id: "reviews"} ,
-    {label: "Контакты", id: "contacts"},
+export const navItems = [
+    {label: "nav:aboutMe", id: "about_me"},
+    {label: "nav:certificates", id: "certificates"},
+    {label: "nav:reviews", id: "reviews"} ,
+    {label: "nav:contacts", id: "contacts"},
     ]

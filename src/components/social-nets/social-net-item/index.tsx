@@ -9,40 +9,33 @@ import styled from '@emotion/styled'
 
 
 interface SocialNetItemProps {
-    colorMobile: string
-    colorScreen: string
-    className?: string
-    direction: string
     element: string
-
 }
 const NetItemWrapper = styled.li<SocialNetItemProps>`
 list-style: none;
-background-color: ${(props) => (props.colorScreen === "dark" ? "#0E402D" : "#fff")};
-margin-left: ${(props) => (props.direction === "row" ? `10px` : `0`)};
-height: ${(props) => (props.element === "footer" ? `22px` : `30px`)};
-width: ${(props) => (props.element === "footer" ? `22px` : `30px`)};
+background-color: ${(props) => (props.element === "showcase-screen" ? "#0E402D" : "#fff")};
+margin-left: ${(props) => (props.element === "showcase-screen" ? `30px` : `0`)};
+height: 30px;
+width: 30px;
 border-radius: 4px;
 display: flex;
 align-items: center;
 justify-content: center;
-margin-top: 30px;
+margin-top: ${(props) => (props.element === "footer-screen" ? `0` : `30px`)};
+margin-right: ${(props) => (props.element === "footer-screen" && `30px`)};
 svg{
     height: 15px;
     width: 15px;
     path{
-    fill:${(props) => (props.colorScreen === "dark" ? "#fff" : "#0E402D")};  }  
+    fill:${(props) => (props.element === "showcase-screen" ? "#fff" : "#0E402D")};  }  
 }
 @media(max-width: 820px){  
-    background-color: ${(props) => (props.colorMobile === "dark" ? "#0E402D" : "#fff")};
-    svg{
-        path{
-    fill:${(props) => (props.colorMobile === "dark" ? "#fff" : "#0E402D")};  }  
-    }
+    margin-right: ${(props) => (props.element === "footer-mobile" && `0px`)};
+    margin-bottom: ${(props) => (props.element === "footer-mobile" && `30px`)};
 }
 `
 
-const SocialNetItem: React.FC<SocialNetItemProps> = ({ direction, element, colorScreen, colorMobile }) => {
+const SocialNetItem: React.FC<SocialNetItemProps> = ({ element }) => {
     const nets = [
         { link: 'https://www.facebook.com/gorodokin.md/', icon: <Facebook /> },
         { link: 'https://www.instagram.com/gorodokin.md/?hl=ru', icon: <Insta /> },
@@ -63,9 +56,7 @@ const SocialNetItem: React.FC<SocialNetItemProps> = ({ direction, element, color
                     >
                         <NetItemWrapper
                             element={element}
-                            colorScreen={colorScreen}
-                            colorMobile={colorMobile}
-                            direction={direction}
+
                         >
                             {net.icon}
                         </NetItemWrapper></a>)

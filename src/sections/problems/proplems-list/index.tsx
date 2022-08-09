@@ -1,6 +1,8 @@
 import styled from '@emotion/styled'
 import React from 'react'
-import { PshychologicalProblem } from '../../../data/problems'
+import { PsychologicalProblem, psychoProblems } from '../../../data/problems'
+import { useSelector } from '../../../services/hooks'
+import { localiseString } from '../../../services/services'
 import ProblemItem from '../problem-item'
 
 
@@ -39,19 +41,19 @@ width: 100%!important;
 }  
 `
 
-export interface HelpListProps {
-    problems: PshychologicalProblem[]
-}
 
-const ProblemsList: React.FC<HelpListProps> = ({ problems }) => {
+
+const ProblemsList: React.FC = () => {
+    const language = useSelector((store: any) => store.language);
+   
     return (
         <ProblemsListWrapper>
             {
-                problems.map(({ name, title, helpSteps }) =>
+                psychoProblems.map(({ name, title, helpSteps }) =>
                     <div key={name} className='list-wrapper'>
-                        <h3>{title}</h3>
+                        <h3>{localiseString(title, language)}</h3>
                         <ul>
-                            {helpSteps.map((step, i) => <ProblemItem key={i} step={step} />)}
+                            {helpSteps.map((step, i) => <ProblemItem key={i} step={localiseString(step, language)} />)}
                         </ul>
                     </div>)
             }
