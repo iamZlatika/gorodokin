@@ -12,6 +12,8 @@ import {
   SET_DATE,
   SET_TIME,
   CLOSE_MODAL,
+  SET_CERTIFICATE_PROPS,
+  SET_WINDOW_SIZE,
 } from "../actions";
 import { ActionsTypes } from "../actions";
 import { dictionary } from "../../data/localisation";
@@ -31,6 +33,17 @@ interface initialStateProps {
   };
   showConfirmModal: boolean;
   localisation: ILocalisation;
+  certificateProps: {
+    screenTimeWidth: number;
+    mobileTimeHeight: number;
+    screenNumberWidth: number;
+    mobileNumberWidth: number;
+    offset: number;
+  };
+  windowSize: {
+    width: number | undefined;
+    height: number | undefined;
+  };
 }
 
 const initialState: initialStateProps = {
@@ -47,6 +60,17 @@ const initialState: initialStateProps = {
   },
   showConfirmModal: false,
   localisation: dictionary,
+  certificateProps: {
+    screenTimeWidth: 0,
+    screenNumberWidth: 0,
+    mobileTimeHeight: 0,
+    mobileNumberWidth: 274,
+    offset: 0,
+  },
+  windowSize: {
+    width: undefined,
+    height: undefined,
+  },
 };
 
 export const rootReducer = (state = initialState, action: ActionsTypes) => {
@@ -140,6 +164,18 @@ export const rootReducer = (state = initialState, action: ActionsTypes) => {
       return {
         ...state,
         showConfirmModal: false,
+      };
+    }
+    case SET_CERTIFICATE_PROPS: {
+      return {
+        ...state,
+        certificateProps: action.props,
+      };
+    }
+    case SET_WINDOW_SIZE: {
+      return {
+        ...state,
+        windowSize: action.props,
       };
     }
     default: {

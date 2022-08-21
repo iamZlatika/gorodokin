@@ -11,7 +11,7 @@ transform: translateY(-16px);
 transform: translateX(0);
 @media(max-width: 820px){
     transform: translateY(0);
-    transform: translateX(-16px);
+    transform: translateX(-1px);
 }
 `
 
