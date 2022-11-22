@@ -1,6 +1,8 @@
 import {
   SET_LANGUAGE,
   OPEN_REVIEW_MODAL,
+  OPEN_CERTIFICATE_MODAL,
+  CLOSE_CERTIFICATE_MODAL,
   CLOSE_REVIEW_MODAL,
   CHECK_IN,
   IS_INVALID_NAME,
@@ -14,6 +16,7 @@ import {
   CLOSE_MODAL,
   SET_CERTIFICATE_PROPS,
   SET_WINDOW_SIZE,
+  SET_REVIEW_PROPS,
 } from "../actions";
 import { ActionsTypes } from "../actions";
 import { dictionary } from "../../data/localisation";
@@ -22,6 +25,7 @@ import { ILocalisation } from "../types";
 interface initialStateProps {
   language: string;
   reviewStatus: boolean;
+  certificatesStatus: boolean;
   isInvalidInputPhoneValue: boolean;
   isInvalidInputNameValue: boolean;
   userInfo: {
@@ -32,6 +36,7 @@ interface initialStateProps {
     dateValue: Date | null;
   };
   showConfirmModal: boolean;
+  certificateToShow: string;
   localisation: ILocalisation;
   certificateProps: {
     screenTimeWidth: number;
@@ -44,11 +49,17 @@ interface initialStateProps {
     width: number | undefined;
     height: number | undefined;
   };
+  reviewProps: {
+    screenWidth: number;
+    mobileWidth: number;
+    offset: number;
+  };
 }
 
 const initialState: initialStateProps = {
   language: "ua",
   reviewStatus: false,
+  certificatesStatus: false,
   isInvalidInputPhoneValue: false,
   isInvalidInputNameValue: false,
   userInfo: {
@@ -59,6 +70,7 @@ const initialState: initialStateProps = {
     dateValue: null,
   },
   showConfirmModal: false,
+  certificateToShow: undefined,
   localisation: dictionary,
   certificateProps: {
     screenTimeWidth: 0,
@@ -70,6 +82,11 @@ const initialState: initialStateProps = {
   windowSize: {
     width: undefined,
     height: undefined,
+  },
+  reviewProps: {
+    screenWidth: 0,
+    mobileWidth: 10,
+    offset: 0,
   },
 };
 
@@ -85,6 +102,20 @@ export const rootReducer = (state = initialState, action: ActionsTypes) => {
       return {
         ...state,
         reviewStatus: true,
+      };
+    }
+    case OPEN_CERTIFICATE_MODAL: {
+      return {
+        ...state,
+        certificatesStatus: true,
+        certificateToShow: action.id,
+      };
+    }
+    case CLOSE_CERTIFICATE_MODAL: {
+      return {
+        ...state,
+        certificatesStatus: false,
+        certificateToShow: "",
       };
     }
     case CLOSE_REVIEW_MODAL: {
@@ -169,13 +200,19 @@ export const rootReducer = (state = initialState, action: ActionsTypes) => {
     case SET_CERTIFICATE_PROPS: {
       return {
         ...state,
-        certificateProps: action.props,
+        certificateProps: action.certificateProps,
+      };
+    }
+    case SET_REVIEW_PROPS: {
+      return {
+        ...state,
+        reviewProps: action.reviewProps,
       };
     }
     case SET_WINDOW_SIZE: {
       return {
         ...state,
-        windowSize: action.props,
+        windowSize: action.windowSizeProps,
       };
     }
     default: {

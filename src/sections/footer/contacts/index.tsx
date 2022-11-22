@@ -27,7 +27,7 @@ line-height: 21px;
     font-size: 18px;
     line-height: 16px;
     font-family: "Raleway", sans-serif;
-    &:nth-child(even){
+    &:nth-of-type(even){
         font-family: 'Tenor Sans', sans-serif;
     }
     .contacts-item{

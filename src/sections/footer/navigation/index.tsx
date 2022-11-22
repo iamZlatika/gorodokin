@@ -56,7 +56,7 @@ const Navigation = () => {
             <h2>{localiseString("interface:navigation", language)}</h2>
             <ul>
 
-                {navItems.map(item => <a href={`#${item.id}`}>
+                {navItems.map(item => <a href={`#${item.id}`} key={item.id}>
                     <li>{localiseString(item.label, language)}</li></a>)}
             </ul>
 

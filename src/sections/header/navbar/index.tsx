@@ -11,7 +11,7 @@ const NavbarWrapper = styled.ul`
     justify-content: space-between;
     align-items: center;
     margin-right: 0;
-    
+    margin-top: 0;
     @media (max-width: 820px){
     position: fixed;
     flex-direction: column;
@@ -25,7 +25,11 @@ const NavbarWrapper = styled.ul`
     margin-right: 30px;
     transform: translateX(350px);
     border-radius: 0px 0px 0px 34px;
+    margin-top: 0;
     }
+    @media (max-width: 1200px) {
+    margin-top: 15px;
+  }
 
 `
 

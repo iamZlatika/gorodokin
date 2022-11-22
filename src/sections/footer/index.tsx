@@ -19,7 +19,7 @@ const FooterWrapper = styled.div`
       display: flex;
       flex-direction: row;
     }
-    & > div:nth-child(even) {
+    & > div:nth-of-type(even) {
       border-top: solid 1px #fff;
       padding-top: 29px;
       position: relative;
@@ -55,7 +55,7 @@ const FooterWrapper = styled.div`
         grid-template-rows: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
       }
-      & > div:nth-child(even) {
+      & > div:nth-of-type(even) {
         border-top: solid 1px #fff;
         padding-top: 29px;
         flex-direction: column;

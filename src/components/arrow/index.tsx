@@ -2,24 +2,30 @@ import styled from "@emotion/styled";
 import React from "react";
 
 interface ArrowProps {
-  disabled: boolean
+  disabled?: boolean
   direction: string;
   color: string;
   className: string;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 const ArrowStyled = styled.button<ArrowProps>`
   height: 36px;
   min-width: 36px;
   border-color: ${(props) => (props.color === "white" ? "#fff" : "#0E402D")};
-  border: 1px solid;
+  border: 1px solid ${(props) => (props.color === "white" ? "#fff" : "#0E402D")};
   border-radius: 50%;
   background-color: ${(props) => (props.color === "white" ? "#0E402D" : "#fff")};
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
+  &:disabled{
+    border: 0.2px solid ${(props) => (props.color === "white" ? "rgba(250, 250, 250, 0.5)" : "rgb(14, 64, 45, 0.5)")};
+    div {
+      background-color:${(props) => (props.color === "white" ? "rgba(250, 250, 250, 0.5)" : "rgb(14, 64, 45, 0.5)")}
+    }
+  }
   div {
     clip-path: ${(props) =>
       props.direction === "right" ? "polygon(100% 50%, 0 0, 0 100%);" : "polygon(100% 100%, 100% 0, 0 50%);"};

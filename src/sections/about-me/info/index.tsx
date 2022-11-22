@@ -54,8 +54,8 @@ interface InfoProps {
   info: IAboutMeInfo;
 }
 const Info: React.FC<InfoProps> = ({ info }) => {
-  const onClick = () => {
-    console.log(info.title);
+  const handleClick = () => {
+    window.location.replace("/#check-in");
   };
   const { title, text, note } = info;
 
@@ -66,7 +66,7 @@ const Info: React.FC<InfoProps> = ({ info }) => {
       <p>{localiseString(text, language)}</p>
       <span>{localiseString(note, language)}</span>
       <div className="btn_container">
-        <Button onClick={onClick} label={localiseString("button:checkIn", language)} color="light" />
+        <Button onClick={handleClick} label={localiseString("button:checkIn", language)} color="light" />
       </div>
     </InfoWrapper>
   );

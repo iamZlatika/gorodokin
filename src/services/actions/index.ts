@@ -1,5 +1,6 @@
 export const SET_LANGUAGE: "SET_LANGUAGE" = "SET_LANGUAGE";
 export const OPEN_REVIEW_MODAL: "OPEN_REVIEW_MODAL" = "OPEN_REVIEW_MODAL";
+export const OPEN_CERTIFICATE_MODAL: "OPEN_CERTIFICATE_MODAL" = "OPEN_CERTIFICATE_MODAL";
 export const CLOSE_REVIEW_MODAL: "CLOSE_REVIEW_MODAL" = "CLOSE_REVIEW_MODAL";
 export const CHECK_IN: "CHECK_IN" = "CHECK_IN";
 export const IS_INVALID_DATE: "IS_INVALID_DATE" = "IS_INVALID_DATE";
@@ -15,6 +16,8 @@ export const SET_TIME: "SET_TIME" = "SET_TIME";
 export const CLOSE_MODAL: "CLOSE_MODAL" = "CLOSE_MODAL";
 export const SET_WINDOW_SIZE: "SET_WINDOW_SIZE" = "SET_WINDOW_SIZE";
 export const SET_CERTIFICATE_PROPS: "SET_CERTIFICATE_PROPS" = "SET_CERTIFICATE_PROPS";
+export const SET_REVIEW_PROPS: "SET_REVIEW_PROPS" = "SET_REVIEW_PROPS";
+export const CLOSE_CERTIFICATE_MODAL: "CLOSE_CERTIFICATE_MODAL" = "CLOSE_CERTIFICATE_MODAL";
 
 export interface ISetLanguage {
   readonly type: typeof SET_LANGUAGE;
@@ -29,6 +32,9 @@ export interface ICloseModal {
 }
 export interface ICloseReviewModal {
   readonly type: typeof CLOSE_REVIEW_MODAL;
+}
+export interface ICloseCertificateModal {
+  readonly type: typeof CLOSE_CERTIFICATE_MODAL;
 }
 export interface ICheckIn {
   readonly type: typeof CHECK_IN;
@@ -55,6 +61,10 @@ export interface ISetName {
   readonly type: typeof SET_NAME;
   name: string;
 }
+export interface IOpenCertificateModal {
+  readonly type: typeof OPEN_CERTIFICATE_MODAL;
+  id: string;
+}
 export interface ISetPhone {
   readonly type: typeof SET_PHONE;
   phone: string;
@@ -69,14 +79,21 @@ export interface ISetTime {
 }
 export interface ISetCertificateProps {
   readonly type: typeof SET_CERTIFICATE_PROPS;
-  props: {
+  certificateProps: {
     width: number;
     offset: number;
   };
 }
-export interface ISetWindoSize {
+export interface ISetReviewProps {
+  readonly type: typeof SET_REVIEW_PROPS;
+  reviewProps: {
+    width: number;
+    offset: number;
+  };
+}
+export interface ISetWindowSize {
   readonly type: typeof SET_WINDOW_SIZE;
-  props: {
+  windowSizeProps: {
     width: number;
     height: number;
   };
@@ -99,4 +116,7 @@ export type ActionsTypes =
   | ISetTime
   | ICloseModal
   | ISetCertificateProps
-  | ISetWindoSize;
+  | ISetWindowSize
+  | IOpenCertificateModal
+  | ICloseCertificateModal
+  | ISetReviewProps

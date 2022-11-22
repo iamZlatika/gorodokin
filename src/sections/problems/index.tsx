@@ -14,6 +14,7 @@ const ProblemsWrapper = styled.div`
       font-size: 32px;
       line-height: 37px;
       color: #ff8427;
+      font-family: "Tenor Sans", sans-serif;
     }
   }
   @media (max-width: 1200px) {

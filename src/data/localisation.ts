@@ -3,7 +3,7 @@ export const dictionary = {
     ru: {
       "aboutme:title": "Обо мне",
       "aboutme:text":
-        "Рад приветствовать Вас, я Антон Городокин, психиатр (MD) с академической степенью доктора философии в области психиатрии (PhD), специализируюсь на тревоге и депрессии. Консультирую сложных пациентов и преподаю психиатрию англоязычным студентам в медицинском университете. Я выступаю на международных психиатрических конгрессах таких сообществ как World psychiatric association (WPA) и European College of Neuropsychopharmacology (ECNP). Как равный консультант я понимаю, что чувствуют мои пациенты и знаю, как это исправить. Полагаю это наиболее значительным своим достижением.",
+        "Рад приветствовать Вас, я Антон Городокин, психиатр (MD) с академической степенью доктора философии в области психиатрии (PhD), специализируюсь на тревоге и депрессии. Консультирую сложных пациентов и преподаю психиатрию англоязычным студентам в медицинском университете. Я выступаю на международных психиатрических конгрессах таких сообществ, как World psychiatric association (WPA) и European College of Neuropsychopharmacology (ECNP). Как равный консультант я понимаю, что чувствуют мои пациенты, и знаю, как это исправить. Полагаю это наиболее значительным своим достижением.",
       "aboutme:note": "Если вам нужна помощь профессионала в сфере психического здоровья, записывайтесь.",
       "contacts:name": "Антон Городокин",
       "contacts:phone": "+380996199029",
@@ -16,16 +16,16 @@ export const dictionary = {
       "problems:anxietyHelp1": "Сформирую индивидуальную схему лечения на основе данных доказательной медицины",
       "problems:anxietyHelp2": "Помогу избежать побочных эффектов и зависимости от препаратов",
       "problems:anxietyHelp3":
-        "У вас восстановиться сон и появиться аппетит, по утрам вы будете чувствовать себя хорошо, исчезнет скованность и внутренняя дрожь",
+        "У Вас восстановится сон и появится аппетит, по утрам вы будете чувствовать себя отдохнувшим, исчезнет скованность и внутренняя дрожь",
       "problems:depression": "Депрессия и ангедония",
       "problems:depressionSteps1": "Выберу антидепрессант, который подойдет именно вам",
-      "problems:depressionSteps2": "Разберусь в причинах заболевания, объясню их вам и помогу всё исправить",
+      "problems:depressionSteps2": "Разберусь в причинах заболевания, объясню их Вам и помогу всё исправить",
       "problems:depressionSteps3": "Жизнь приобретёт былые краски, исчезнет чувство вины и ощущение загнанности в угол",
-      "problems:depressionSteps4": "Вы снова начнёте думать о будущем хорошее и получать удовольствие",
+      "problems:depressionSteps4": "Вы снова начнёте смотреть в будущее с ожиданиями лучшего и получать удовольствие",
       "problems:somatic": "Необъяснимые физические симптомы",
       "problems:somaticSteps1":
         "Выясню, в чем состоит психическая причина физических расстройств (тот случай, когда врачи-специалисты отсылают вас к психотерапевту), объясню, что именно с вами происходит, и верну вас в норму",
-      "problems:somaticSteps2": "Научу что делать, чтобы это не повторялось",
+      "problems:somaticSteps2": "Научу, что делать, чтобы это не повторялось",
       "problems:chronic": "Перепады настроения и хроническая усталость",
       "problems:chronicSteps1": "Разберусь, почему это с вами происходит",
       "problems:chronicSteps2": "Выберу схему лечения, которая вас стабилизирует и поможет восстановиться",
@@ -46,20 +46,28 @@ export const dictionary = {
       "interface:contacts": "Контакты",
       "interface:politics": "Политика Конфиденциальности",
       "interface:howCanIHelp": "Как я могу помочь",
+      "interface:titleDoctor": "Психиатр PhD / Психотерапевт",
       "interface:certificates": "Сертификаты",
-      "interface:certificates14": "ШОТО НАПИШИ ПЛИЗ 14",
-      "interface:certificates15": "ШОТО НАПИШИ ПЛИЗ 15",
-      "interface:certificates16": "ШОТО НАПИШИ ПЛИЗ 16",
-      "interface:certificates17":
-        "Представил собственное исследование на всемирном конгрессе ECNP в Копенгагене (Дания).",
-      "interface:certificates18":
-        "Штатный преподаватель кафедры психиатрии, психотерапии, общей и медицинской психологии, наркологии и сексологии.",
+      "interface:certificates14":
+        "Закончил обучение в Запорожском государственном медицинском университете, получил специальность врача-специалиста (MD).",
+      "interface:certificates16":
+        "С отличием закончил обучение в магистратуре Запорожского государственного медицинского университета, получил степень магистра по специальности «психиатрия».",
       "interface:certificates19":
-        "Закончил аспирантуру по специальности «психиатрия», защитил диссертационное исследование, получил степень доктора философии (PhD).",
-      "interface:certificates20": "ШОТО НАПИШИ ПЛИЗ 20",
+        "Представил собственное исследование на международном конгрессе Европейского колледжа нейропсихофармакологии (ECNP) (Копенгаген, Дания), стал членом ECNP.",
+      "interface:certificates20":
+        "Прошел обучение по программе европейского центра мониторинга наркотиков и зависимостей «Клинические рекомендации по новым психоактивным веществам», стал членом рабочей группы МОЗ Украины.",
+      "interface:certificates21-1": "Выступил спикером на конгрессе всемирной психиатрической ассоциации.",
+      "interface:certificates21-2":
+        "Защитил диссертацию и получил степень доктора философии (PhD) по специальности «психиатрия»",
+      "interface:certificates22-2":
+        "Прошел обучение по использованию Международной классификации болезней 11-го пересмотра (МКБ-11) от всемирной психиатрической ассоциации  (WPA).",
+      "interface:certificates22-1":
+        "Прошел обучение в школе лечения COVID-19 (для тренеров) от Всемирной организации здравоохранения (ВОЗ).",
       "interface:reviews": "Отзывы",
-      "interface:reviewsEpigraph": "Я понимаю как сложно выбрать специалиста, который подходит именно вам. С этими людьми мы нашли общий язык, и я с удовольствием остаюсь их лечащим врачом.",
+      "interface:reviewsEpigraph":
+        "Я понимаю как сложно выбрать специалиста, который подходит именно вам. С этими людьми мы нашли общий язык, и я с удовольствием остаюсь их лечащим врачом.",
       "interface:navigation": "Навигация",
+      "interface:showCertificate": "Посмотреть сертификат",
       "modal:checkInText": "Спасибо за Вашу заявку! Я свяжусь с Вами в ближайшее время ",
       "modal:gender": "Пол",
       "modal:review": "Оставить отзыв",
@@ -73,7 +81,7 @@ export const dictionary = {
     ua: {
       "aboutme:title": "Біографія",
       "aboutme:text":
-        "Вітаю, я Антон Городокін, психіатр з академічним ступенем доктора філософії за спеціальністю «психіатрія». Я спеціалізуюся на психічних розладах, які пов’язані зі стресом, а саме – патологічній тривозі та депресії. Моя кваліфікація дозволяє займатися складними випадками, крім того, я займаюся викладанням психіатрії та науковою діяльністю в медичному університеті. Я систематично приймаю участь у якості спікера на наукових конференціях міжнародного рівня які організовані Всесвітньою психіатричною асоціацією (WPA) та Європейським коледжем нейропсихофармакології (ECNP). Мій особистий досвід у відношенні проблем пов’язаних зі стресом дозволяє мені виступати рівним консультантом для моїх клієнтів.",
+        "Вітаю, я Антон Городокін, психіатр з академічним ступенем доктора філософії за спеціальністю «психіатрія». Я спеціалізуюся на психічних розладах, які пов’язані зі стресом, а саме – патологічній тривозі та депресії. Моя кваліфікація дозволяє займатися складними випадками. Окрім того, я викладаю психіатрію та займаюся науковою діяльністю в медичному університеті. Як спікер я систематично беру участь у наукових конференціях міжнародного рівня, організованих Всесвітньою психіатричною асоціацією (WPA) та Європейським коледжем нейропсихофармакології (ECNP). Мій особистий досвід стосовно проблем, пов’язаних зі стресом, дозволяє мені виступати рівним консультантом для моїх клієнтів.",
       "aboutme:note": "Якщо вам потрібна моя професійна допомога, запишіться на консультацію.",
       "contacts:name": "Антон Городокін",
       "contacts:phone": "+380996199029",
@@ -84,24 +92,22 @@ export const dictionary = {
       "nav:contacts": "Контакти",
       "problems:anxiety": "Патологічна тривога та нав’язливі думки",
       "problems:anxietyHelp1": "Розроблю індивідуальну модель лікування на основі доказової медицини",
-      "problems:anxietyHelp2": "Допоможу уникнути сторонніх ефектів та звикання до препаратів",
+      "problems:anxietyHelp2": "Допоможу уникнути побічних ефектів та звикання до препаратів",
       "problems:anxietyHelp3":
-        "Ваш сон нормалізується, вранці ви прокидатиметеся відпочившими, внутрішня напруга зникне",
-
+        "Ваш сон нормалізується, вранці Ви прокидатиметеся відпочилими, внутрішня напруга зникне",
       "problems:depression": "Депресія та ангедонія",
-      "problems:depressionSteps1": "Знайду антидепресант, який вам повністю підійде",
+      "problems:depressionSteps1": "Підберу антидепресант, який Вам повністю підійде",
       "problems:depressionSteps2": "Знайду причини розладу та допоможу їх прибрати",
-      "problems:depressionSteps3": "У ваше життя повернуться кольори, провина та відчай зникнуть",
-      "problems:depressionSteps4": "У вас знову з’являться плани та відчуття задоволення",
+      "problems:depressionSteps3": "Ваше життя знову наповниться барвами, провина та відчай зникнуть",
+      "problems:depressionSteps4": "Ви знову будете планувати та відчувати задоволення",
       "problems:somatic": "Психосоматичні розлади",
       "problems:somaticSteps1":
-        "Знайду психічні причини фізичних симптомів (той випадок, коли сімейний лікар пропонує звернутися до психіатра), поясню вам причини та навчу як керувати своїм тілом",
+        "З’ясую психічні причини фізичних симптомів (той випадок, коли сімейний лікар пропонує звернутися до психіатра), поясню вам причини та навчу, як керувати своїм тілом",
       "problems:somaticSteps2": "Допоможу уникнути повернення симптомів",
-
       "problems:chronic": "Дратівливість та хронічна втома",
-      "problems:chronicSteps1": "Допоможу точно з’ясувати що з вами коється",
-      "problems:chronicSteps2": "Знайду оптимальне лікування для повного відновлення",
-      "problems:chronicSteps3": "Знайду причину стресу",
+      "problems:chronicSteps1": "Допоможу з’ясувати, що з вами коїться",
+      "problems:chronicSteps2": "Підберу оптимальне лікування для повного відновлення",
+      "problems:chronicSteps3": "З’ясую причину стресу",
       "problems:chronicSteps4": "Допоможу знайти спеціалістів для лікування не-психічних причин",
       "button:checkIn": "Запланувати консультацію",
       "button:signUp": "Записатися",
@@ -113,26 +119,35 @@ export const dictionary = {
       "interface:date": "Дата",
       "interface:time": "Час",
       "interface:name": "Ім’я",
+      "interface:titleDoctor": "Психіатр PhD / Психотерапевт",
       "interface:phone": "Номер телефону",
       "interface:contacts": "Контакти",
       "interface:politics": "Політика конфіденційності",
       "interface:howCanIHelp": "Як я можу допомогти",
       "interface:certificates": "Сертифікати",
-      "interface:certificates14": "Сертифікати",
-      "interface:certificates15": "Сертифікати",
-      "interface:certificates16": "Сертифікати",
-      "interface:certificates17": "презентував власне дослідження на всесвітньому конгресі ECNP в Копенгагені (Данія).",
-      "interface:certificates18":
-        "викладач кафедри психіатрії, психотерапії, загальної та медичної психології, наркології та сексології.",
+      "interface:certificates14":
+        "Закінчив навчання у Запорізькому державному медичному університеті, здобув спеціальність лікаря-спеціаліста (MD).",
+      "interface:certificates16":
+        "З відзнакою закінчив навчання у магістратурі Запорізького державного медичного університету, здобув ступінь магістра за спеціальністю «психіатрія».",
       "interface:certificates19":
-        "закінчив аспірантуру за спеціальністю «психіатрія», захистив дисертацію та здобув ступень доктора філософії (PhD).",
-      "interface:certificates20": "Сертифікати",
+        "Представив власне дослідження на міжнародному конгресі Європейського коледжу нейропсихофармакології (ECNP) (Копенгаген, Данія), став членом ECNP.",
+      "interface:certificates20":
+        "Пройшов навчання за програмою Європейського центру моніторингу наркотиків та залежностей «Клінічні рекомендації щодо нових психоактивних речовин», став членом робочої групи МОЗ України.",
+      "interface:certificates21-1": "Виступив спікером на конгресі Всесвітньої психіатричної асоціації.",
+      "interface:certificates21-2":
+        "Захистив дисертацію та здобув ступінь доктора філософії (PhD) за спеціальністю «психіатрія».",
+      "interface:certificates22-2":
+        "Пройшов навчання з використання міжнародної класифікації хвороб 11-го перегляду (МКХ-11) від всесвітньої психіатричної асоціації (WPA)",
+      "interface:certificates22-1":
+        "Пройшов навчання у школі лікування COVID-19 (для тренерів) від Всесвітньої організації охорони здоров'я (ВООЗ)",
       "interface:reviews": "Відгуки",
-      "interface:reviewsEpigraph": "Я розумію, як складно обрати спеціаліста, який підходить саме Вам. З цими людьми ми порозумілися, та я із задоволенням залишаюся їх лікарем",
+      "interface:reviewsEpigraph":
+        "Я розумію, як складно обрати спеціаліста, який підходить саме Вам. З цими людьми ми порозумілися, і я із задоволенням залишаюся їх лікарем",
       "interface:navigation": "Навігація",
-      "modal:checkInText": "Дякую за заявку, я зв’яжуся з вами у найближчий час",
+      "interface:showCertificate": "Переглянути сертифікат",
+      "modal:checkInText": "Дякую за заявку, я зв’яжуся з Вами у найближчий час",
       "modal:review": "Залишити відгук",
-     "modal:gender": "Стать",
+      "modal:gender": "Стать",
       "modal:male": "Ч",
       "modal:female": "Ж",
       "modal:name": "Ім'я",
@@ -187,21 +202,32 @@ export const dictionary = {
       "interface:contacts": "Contacts",
       "interface:politics": "Policy",
       "interface:howCanIHelp": "How can I help",
+      "interface:titleDoctor": "Psychiatrist PhD / Psychotherapist",
+
       "interface:certificates": "Certificates",
-      "interface:certificates14": "Certificates",
-      "interface:certificates15": "Certificates",
-      "interface:certificates16": "Certificates",
-      "interface:certificates17": "presented own study on global ECNP congress of in Copenhagen (Denmark).",
-      "interface:certificates18":
-        "assistant professor of the Psychiatry, psychotherapy, general and mecial psychology, narcology and sexology department.",
-      "interface:certificates19": "completed postgraduate academic course on “psychiatry”, got PhD academic degree.",
-      "interface:certificates20": "Certificates",
+      "interface:certificates14":
+        "Graduated from Zaporizhzhya State Medical University, received a specialty of medical doctor (MD).",
+      "interface:certificates16":
+        "Graduated with honors from the master's program of Zaporozhye State Medical University, received a master's degree in psychiatry.",
+      "interface:certificates19":
+        "Presented own study at the international congress of the European College of Neuropsychopharmacology (ECNP) (Copenhagen, Denmark), became an ECNP member.",
+      "interface:certificates20":
+        "Completed training under the program of the European Monitoring Center for Drugs and Addictions «Clinical guidance on Novel psychoactive substances», became a member of the working group of the Ministry of Health of Ukraine.",
+      "interface:certificates21-1": "Became a speaker at the Congress of the World Psychiatric Association.",
+      "interface:certificates21-2":
+        "Publicly presented my PhD-thesis and received a Doctor of Philosophy (PhD) degree in psychiatry.",
+      "interface:certificates22-2":
+        "Underwent training of International disease classification 11 (ICD-11) from World psychiatric association (WPA)",
+      "interface:certificates22-1":
+        "Underwent course «School for COVID-19 treatment (for trainers) from World Health Organization (WHO)»",
       "interface:reviews": "Reviews",
-      "interface:reviewsEpigraph": "I know how difficult it is to choose a specialist who fits you. We found a harmony with these people and I am happy to remain their doctor",
+      "interface:reviewsEpigraph":
+        "I know how difficult it is to choose a specialist who fits you. We found a harmony with these people and I am happy to remain their doctor",
       "interface:navigation": "Navigation",
+      "interface:showCertificate": "Show certificate",
       "modal:checkInText": "Thank you for your assignment, I'll contact you as soon as possible",
       "modal:review": "Leave the feedback",
-     "modal:gender": "Sex",
+      "modal:gender": "Sex",
       "modal:male": "M",
       "modal:female": "F",
       "modal:name": "Name",

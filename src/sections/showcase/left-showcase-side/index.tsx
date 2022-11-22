@@ -12,7 +12,7 @@ const LeftShowcaseWrapper = styled.div`
   grid-row-start: 1;
   grid-row-end: 3;
   margin-left: 0;
-  h2 {
+  h1 {
     font-size: 80px;
     line-height: 94px;
     text-transform: uppercase;
@@ -32,7 +32,7 @@ const LeftShowcaseWrapper = styled.div`
   }
 
   @media (max-width: 1200px) {
-    h2 {
+    h1 {
       font-size: 50px;
     }
   }
@@ -40,20 +40,21 @@ const LeftShowcaseWrapper = styled.div`
     width: 80%;
     margin: auto;
 
-    h2 {
+    h1 {
       margin-top: 15px;
       font-size: 46px;
       line-height: 54px;
     }
     h3 {
-      margin-bottom: 25px;
+      height: 60px;
+      margin-bottom: 0px;
     }
     button {
       margin: 0 auto 44px;
     }
   }
   @media (max-width: 350px) {
-    h2 {
+    h1 {
       font-size: 30px;
       line-height: 36px;
     }
@@ -61,14 +62,14 @@ const LeftShowcaseWrapper = styled.div`
 `;
 const LeftShowcase = () => {
   const language = useSelector((store: any) => store.language);
-  const onClick = () => {
-    console.log("first btn clicked");
+  const handleClick = () => {
+    window.location.replace("/#check-in");
   };
   return (
     <LeftShowcaseWrapper>
-      <h2>{localiseString("contacts:name", language)} </h2>
-      <h3>{localiseString("interface:howCanIHelp", language)}</h3>
-      <Button onClick={onClick} label={localiseString("button:checkIn", language)} color="default" />
+      <h1>{localiseString("contacts:name", language)} </h1>
+      <h3>{localiseString("interface:titleDoctor", language)}</h3>
+      <Button onClick={handleClick} label={localiseString("button:checkIn", language)} color="default" />
     </LeftShowcaseWrapper>
   );
 };

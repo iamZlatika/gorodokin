@@ -22,7 +22,7 @@ const AboutMeStyle = styled.div`
     object-fit: cover;
   }
   @media (max-width: 820px) {
-    margin-top: 300px;
+    margin-top: 330px;
     flex-direction: column;
     img {
       width: 100%;

@@ -1,4 +1,3 @@
-import styled from "@emotion/styled";
 import React, { useEffect, ReactNode } from "react";
 import ReactDOM from "react-dom";
 
@@ -6,7 +5,8 @@ import ModalOverlay from "../modal-overlay";
 
 interface IModal {
   children: ReactNode;
-  onClose: () => void;
+  onClose?: () => void;
+  onClick?: ()=> void;
 }
 
 const Modal: React.FC<IModal> = ({ children, onClose }) => {
