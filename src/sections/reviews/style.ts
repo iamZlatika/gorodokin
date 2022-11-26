@@ -119,19 +119,19 @@ export const ReviewsWrapper = styled.div`
   @media (max-width: 390px) {
     .container {
       width: 90%;
+      .top {
+        justify-content: center;
+        .screen_btn {
+          display: none;
+        }
+        .reviews-title {
+          width: 227px;
+        }
+      }
       .mobile_btn {
         display: block;
         width: 250px;
       }
     }
   }
-  /* @media (max-width: 390px) {
-    .container {
-      .top {
-        .reviews-title {
-          width: 227px;
-        }
-      }
-    }
-  } */
 `;

@@ -17,6 +17,7 @@ import {
   SET_CERTIFICATE_PROPS,
   SET_WINDOW_SIZE,
   SET_REVIEW_PROPS,
+  SET_TOGGLE_REVIEW_STATUS,
 } from "../actions";
 import { ActionsTypes } from "../actions";
 import { dictionary } from "../../data/localisation";
@@ -33,8 +34,8 @@ interface initialStateProps {
     phone: string | null;
     time: string | null;
     date: string | null;
-    dateValue: Date | null;
   };
+  toggleReviewStatus: boolean;
   showConfirmModal: boolean;
   certificateToShow: string;
   localisation: ILocalisation;
@@ -67,8 +68,8 @@ const initialState: initialStateProps = {
     phone: null,
     time: null,
     date: null,
-    dateValue: null,
   },
+  toggleReviewStatus: true,
   showConfirmModal: false,
   certificateToShow: undefined,
   localisation: dictionary,
@@ -172,7 +173,7 @@ export const rootReducer = (state = initialState, action: ActionsTypes) => {
         userInfo: {
           ...state.userInfo,
           date: action.date,
-          dateValue: action.date,
+          time: null,
         },
       };
     }
@@ -207,12 +208,19 @@ export const rootReducer = (state = initialState, action: ActionsTypes) => {
       return {
         ...state,
         reviewProps: action.reviewProps,
+        toggleReviewStatus: action.reviewProps.toggleReviewStatus,
       };
     }
     case SET_WINDOW_SIZE: {
       return {
         ...state,
         windowSize: action.windowSizeProps,
+      };
+    }
+    case SET_TOGGLE_REVIEW_STATUS: {
+      return {
+        ...state,
+        toggleReviewStatus: action.toggleReviewStatus,
       };
     }
     default: {

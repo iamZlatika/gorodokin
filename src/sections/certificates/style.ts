@@ -8,7 +8,7 @@ export const CertificateWrapper = styled.div`
   display: flex;
   padding-left: 10%;
   flex-direction: column;
-
+  align-items: center;
   .sert-title {
     width: 360px;
     display: flex;
@@ -43,14 +43,15 @@ export const CertificateWrapper = styled.div`
       flex-direction: column;
       align-items: center;
       justify-content: end;
-      &:first-of-type div:first-of-type {
-        background: linear-gradient(
+      &:first-child div:first-child{
+        /* background: linear-gradient(
           5475 90deg,
           rgba(151, 154, 153, 1) 0%,
           rgba(151, 154, 153, 1) 36%,
           rgba(14, 64, 45, 1) 100%,
           rgba(14, 64, 45, 1) 100%
-        );
+        ); */
+        /* background: red; */
         opacity: 0.3;
       }
       .cert-image {

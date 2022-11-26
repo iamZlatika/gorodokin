@@ -18,6 +18,7 @@ export const SET_WINDOW_SIZE: "SET_WINDOW_SIZE" = "SET_WINDOW_SIZE";
 export const SET_CERTIFICATE_PROPS: "SET_CERTIFICATE_PROPS" = "SET_CERTIFICATE_PROPS";
 export const SET_REVIEW_PROPS: "SET_REVIEW_PROPS" = "SET_REVIEW_PROPS";
 export const CLOSE_CERTIFICATE_MODAL: "CLOSE_CERTIFICATE_MODAL" = "CLOSE_CERTIFICATE_MODAL";
+export const SET_TOGGLE_REVIEW_STATUS: "SET_TOGGLE_REVIEW_STATUS" = "SET_TOGGLE_REVIEW_STATUS";
 
 export interface ISetLanguage {
   readonly type: typeof SET_LANGUAGE;
@@ -89,6 +90,7 @@ export interface ISetReviewProps {
   reviewProps: {
     width: number;
     offset: number;
+    toggleReviewStatus: boolean,
   };
 }
 export interface ISetWindowSize {
@@ -97,6 +99,10 @@ export interface ISetWindowSize {
     width: number;
     height: number;
   };
+}
+export interface ISetToggleReviewStatus {
+  readonly type: typeof SET_TOGGLE_REVIEW_STATUS;
+  toggleReviewStatus: boolean;
 }
 
 export type ActionsTypes =
@@ -120,3 +126,4 @@ export type ActionsTypes =
   | IOpenCertificateModal
   | ICloseCertificateModal
   | ISetReviewProps
+  | ISetToggleReviewStatus;

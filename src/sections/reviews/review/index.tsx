@@ -8,9 +8,15 @@ import { SET_REVIEW_PROPS, SET_WINDOW_SIZE } from "../../../services/actions/ind
 import { Size } from "../../../services/types";
 import { useWindowSize } from "../../../services/services";
 import { ReviewStyled } from "./style";
+import { localiseString } from "../../../services/services";
+//@ts-ignore
+import ReactReadMoreReadLess from "react-read-more-read-less";
+import ReadMore from "../../../components/readMore/ReadMore";
 
 const Review = () => {
   const dispatch = useDispatch();
+  const language = useSelector((store: any) => store.language);
+  const toggleReviewStatus = useSelector((store: any) => store.toggleReviewStatus);
   const reviewRef = useRef<HTMLDivElement>();
   const offset = useSelector((store: any) => store.reviewProps.offset);
   const screenWidth = useSelector((state: any) => state.reviewProps.screenWidth);
@@ -27,6 +33,7 @@ const Review = () => {
         offset: 0,
         screenWidth: 0,
         mobileWidth: 0,
+        toggleReviewStatus: true,
       },
     });
   }, [windowSize]);
@@ -36,14 +43,14 @@ const Review = () => {
       return 850;
     }
     if (size.width >= 820 && size.width < 1200) {
-      return 492;
+      return 485;
     }
-    if (size.width < 820) {
+    if (size.width < 820 && size.width > 390) {
       return 289;
     }
-    // if (size.width >= 350 && size.width < 390) {
-    //   return 280;
-    // }
+    if (size.width >= 350 && size.width <= 390) {
+      return 227;
+    }
   };
 
   const switchLeft = () => {
@@ -53,6 +60,7 @@ const Review = () => {
         offset: offset - 1,
         screenWidth: screenWidth - reviewStep(size),
         mobileWidth: 0,
+        toggleReviewStatus: true
       },
     });
   };
@@ -63,6 +71,7 @@ const Review = () => {
         offset: offset + 1,
         screenWidth: screenWidth + reviewStep(size),
         mobileWidth: 0,
+        toggleReviewStatus: true
       },
     });
   };
@@ -76,33 +85,21 @@ const Review = () => {
         <div className="reviews-carousel" ref={reviewRef}>
           {Reviews.map((review: any) => (
             <div className="review-item" key={review.id}>
-              <div className="under">
+              <div className="pic-container">
                 <img src={review.sex === "female" ? femaleUser : maleUser} alt="user-pick" />
+                <div className="under"></div>
               </div>
               <div className="user_info">
                 <h3>{review.name}</h3>
                 <span>{review.age}</span>
-                <p>{review.review}</p>
+                <p>
+                  <ReadMore status={toggleReviewStatus}>{review.review}</ReadMore>
+                </p>
               </div>
             </div>
           ))}
         </div>
       </div>
-      {/* <div className="user_icon">
-          <div className="under">
-            <img src={femaleUser} alt="user-pick" />
-          </div>
-        </div>
-        <div className="user_info">
-          <h3>Кристина Никитина</h3>
-          <span>27 лет</span>
-          <p>
-            Антон - очень профессиональный психолог. У меня были проблемы с самоопредитением. Какие-то чувства тревоги и
-            дискомфорта. У меня было деприссивное состояние. Антон мне помог, я полувствовала себя легче, более
-            уверенной. Он помог в прямом смысле найти смысл жизни.
-          </p>
-        
-        </div> */}
       <Arrow color="white" direction="right" className="arrow_right" onClick={switchRight} disabled={offset >= 7} />
     </ReviewStyled>
   );

@@ -1,5 +1,4 @@
-import styled from "@emotion/styled";
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { useHistory } from "react-router-dom";
 import Button from "../../../components/buttons/Button";
 import DatePickerComponent from "../../../components/date-picker";
@@ -19,53 +18,10 @@ import {
 } from "../../../services/actions";
 import { useSelector } from "../../../services/hooks";
 import { localiseString } from "../../../services/services";
+import { CheckInFormStyled } from "./styles";
 
-const CheckInFormStyled = styled.div`
-  width: 40%;
-  margin-right: 10px;
-  margin-top: 40px;
-  h2 {
-    font-family: "Tenor Sans", sans-serif;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 37px;
-    margin-bottom: 10px;
-    color: #ff8427;
-  }
-  span {
-    font-size: 14px;
-    line-height: 16px;
-    font-family: "Raleway", sans-serif;
-    color: #1a181b;
-    display: inline-block;
-  }
-  form {
-    width: 100%;
-    font-family: "Raleway", sans-serif;
-    .datepicker_group {
-      display: flex;
-      margin-top: 25px;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-  }
-  .input_group {
-    margin-bottom: 40px;
-  }
-
-  @media (max-width: 820px) {
-    width: 100%;
-    form {
-      button {
-        margin: 0 auto;
-      }
-    }
-  }
-`;
 const CheckInForm = () => {
   const language = useSelector((store: any) => store.language);
-
-  const [startDate, setStartDate] = useState(new Date());
 
   const checkInForm = useRef();
   const dispatch = useDispatch();
@@ -113,7 +69,7 @@ const CheckInForm = () => {
   };
   const isSaterday = (date: Date) => {
     const day = date.getDay();
-    return day === 6;
+    return day == 6;
   };
 
   const saterdayIntervals = [
@@ -132,6 +88,10 @@ const CheckInForm = () => {
     setHours(setMinutes(new Date(), 40), 16),
     setHours(setMinutes(new Date(), 20), 19),
   ];
+
+  const supressInput = (e: React.KeyboardEvent) => {
+    e.preventDefault();
+  };
   return (
     <CheckInFormStyled>
       <h2>{localiseString("interface:checkIn", language)}</h2>
@@ -140,20 +100,22 @@ const CheckInForm = () => {
       <form ref={checkInForm}>
         <div className="datepicker_group">
           <DatePickerComponent
-            value={userInfo.date}
+            value={userInfo.date && moment(userInfo.date).format("DD.MM.YYYY")}
             name="date"
             label={localiseString("interface:date", language)}
             id="date"
-            dateFormat="dd.MM.yyyy"
+            dateFormat="DD.MM.YYYY"
             onChange={(date) => {
-              dispatch({ type: SET_DATE, date: moment(date).format("DD.MM.YYYY") });
+              dispatch({ type: SET_DATE, date: date });
             }}
             locale={language}
             filterDate={isWeekday}
             minDate={moment().toDate()}
+            placeholderText={localiseString("interface:date", language)}
           />
           <DatePickerComponent
-            value={userInfo.time}
+            onKeyDown={supressInput}
+            value={userInfo.time && moment(userInfo.time).format("HH:mm")}
             name="time"
             timeIntervals={40}
             label={localiseString("interface:time", language)}
@@ -162,12 +124,35 @@ const CheckInForm = () => {
             id="time"
             locale="ru"
             dateFormat="HH:mm"
+            placeholderText={localiseString("interface:time", language)}
             onChange={(time) => {
-              dispatch({ type: SET_TIME, time: moment(time).format("HH:mm") });
+              // console.log("1",
+              //   weekDaysIntervals.filter(
+              //     (interval: Date) => moment(interval).format("HH:mm") === moment(time).format("HH:mm")
+              //   )
+              // );
+              // console.log("2",
+              //   weekDaysIntervals.filter((interval: Date) => console.log(moment(interval).format("HH:mm"))),
+
+              // );
+              // console.log("3", typeof  moment(time).format("HH:mm"),  moment(time).format("HH:mm"))
+              // weekDaysIntervals.filter(
+              //   (interval: Date) => moment(interval).format("HH:mm") !== moment(time).format("HH:mm")
+              // ).length === 0;
+
+              // if (
+              //   time &&
+              //   weekDaysIntervals.filter(
+              //     (interval: Date) => moment(interval).format("HH:mm") !== moment(time).format("HH:mm")
+              //   ).length === 0
+              // ) {
+              //   return;
+              // } else {
+              dispatch({ type: SET_TIME, time: time });
+              // }
             }}
             timeCaption="Время"
-            includeTimes={isSaterday(startDate) ? saterdayIntervals : weekDaysIntervals}
-            required
+            includeTimes={isSaterday(new Date(userInfo.date)) ? saterdayIntervals : weekDaysIntervals}
           />
         </div>
         <div className="input_group">

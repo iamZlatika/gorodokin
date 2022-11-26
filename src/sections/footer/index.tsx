@@ -38,7 +38,7 @@ const FooterWrapper = styled.div`
       }
       span {
         position: absolute;
-        font-family: Tenor Sans;
+        font-family: 'Tenor Sans',sans-serif;
         font-style: normal;
         font-weight: normal;
         font-size: 14px;
