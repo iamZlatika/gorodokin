@@ -17,6 +17,7 @@ import { CLOSE_REVIEW_MODAL, CLOSE_CERTIFICATE_MODAL } from "./services/actions"
 import { useSelector } from "./services/hooks";
 import { Location } from "history";
 import CustomInput from "./components/custom-input";
+import ModalSuccess from "./components/modal-success";
 
 const App: React.FC = () => {
   const history = useHistory();
@@ -26,6 +27,7 @@ const App: React.FC = () => {
   const dispatch = useDispatch();
   const reviewStatus = useSelector((store) => store.reviewStatus);
   const certificatesStatus = useSelector((store) => store.certificatesStatus);
+  const reviewSuccessStatus = useSelector((store) => store.reviewSuccessStatus);
   const confirmCheckIn = () => history.goBack()
 
 
@@ -61,6 +63,18 @@ const App: React.FC = () => {
               onClose={confirmCheckIn}
             >
               <CustomInput onClick={confirmCheckIn} />
+            </Modal>
+          )
+        }
+      />
+      <Route
+        path="/successfully-send"
+        children={
+          background && (
+            <Modal
+              onClose={confirmCheckIn}
+            >
+              <ModalSuccess />
             </Modal>
           )
         }

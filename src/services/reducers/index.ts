@@ -18,10 +18,16 @@ import {
   SET_WINDOW_SIZE,
   SET_REVIEW_PROPS,
   SET_TOGGLE_REVIEW_STATUS,
+  SET_WINDOW_WIDTH,
+  SET_REVIEW_AGE,
+  SET_REVIEW_NAME,
+  SET_REVIEW_REVIEW,
+  SET_REVIEW_SEX,
+  SET_REVIEW_SUCCESS_STATUS,
 } from "../actions";
 import { ActionsTypes } from "../actions";
 import { dictionary } from "../../data/localisation";
-import { ILocalisation } from "../types";
+import { ILocalisation, ReviewInfo } from "../types";
 
 interface initialStateProps {
   language: string;
@@ -50,11 +56,15 @@ interface initialStateProps {
     width: number | undefined;
     height: number | undefined;
   };
+  windowWidth: {
+    width: number | undefined;
+  };
   reviewProps: {
     screenWidth: number;
-    mobileWidth: number;
     offset: number;
   };
+  reviewInfo: ReviewInfo;
+  reviewSuccessStatus: boolean
 }
 
 const initialState: initialStateProps = {
@@ -84,11 +94,21 @@ const initialState: initialStateProps = {
     width: undefined,
     height: undefined,
   },
+  windowWidth: {
+    width: undefined,
+  },
   reviewProps: {
     screenWidth: 0,
-    mobileWidth: 10,
     offset: 0,
   },
+  reviewInfo: {
+    maleSex: false,
+    femaleSex: false,
+    name: "",
+    age: "",
+    review: "",
+  },
+  reviewSuccessStatus: false,
 };
 
 export const rootReducer = (state = initialState, action: ActionsTypes) => {
@@ -217,10 +237,46 @@ export const rootReducer = (state = initialState, action: ActionsTypes) => {
         windowSize: action.windowSizeProps,
       };
     }
+    case SET_WINDOW_WIDTH: {
+      return {
+        ...state,
+        windowWidth: action.windowWidthProps,
+      };
+    }
     case SET_TOGGLE_REVIEW_STATUS: {
       return {
         ...state,
         toggleReviewStatus: action.toggleReviewStatus,
+      };
+    }
+    case SET_REVIEW_REVIEW: {
+      return {
+        ...state,
+        reviewInfo: { ...state.reviewInfo, review: action.review },
+      };
+    }
+    case SET_REVIEW_NAME: {
+      return {
+        ...state,
+        reviewInfo: { ...state.reviewInfo, name: action.name },
+      };
+    }
+    case SET_REVIEW_AGE: {
+      return {
+        ...state,
+        reviewInfo: { ...state.reviewInfo, age: action.age },
+      };
+    }
+    case SET_REVIEW_SEX: {
+      return {
+        ...state,
+        reviewInfo: { ...state.reviewInfo, maleSex: action.sex.male, femaleSex: action.sex.female },
+      };
+    }
+    case SET_REVIEW_SUCCESS_STATUS: {
+      return {
+        ...state,
+        reviewSuccessStatus: action.status,
       };
     }
     default: {

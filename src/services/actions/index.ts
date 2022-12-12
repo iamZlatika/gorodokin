@@ -1,3 +1,5 @@
+import { ReviewInfo } from "../types";
+
 export const SET_LANGUAGE: "SET_LANGUAGE" = "SET_LANGUAGE";
 export const OPEN_REVIEW_MODAL: "OPEN_REVIEW_MODAL" = "OPEN_REVIEW_MODAL";
 export const OPEN_CERTIFICATE_MODAL: "OPEN_CERTIFICATE_MODAL" = "OPEN_CERTIFICATE_MODAL";
@@ -19,6 +21,12 @@ export const SET_CERTIFICATE_PROPS: "SET_CERTIFICATE_PROPS" = "SET_CERTIFICATE_P
 export const SET_REVIEW_PROPS: "SET_REVIEW_PROPS" = "SET_REVIEW_PROPS";
 export const CLOSE_CERTIFICATE_MODAL: "CLOSE_CERTIFICATE_MODAL" = "CLOSE_CERTIFICATE_MODAL";
 export const SET_TOGGLE_REVIEW_STATUS: "SET_TOGGLE_REVIEW_STATUS" = "SET_TOGGLE_REVIEW_STATUS";
+export const SET_WINDOW_WIDTH: "SET_WINDOW_WIDTH" = "SET_WINDOW_WIDTH";
+export const SET_REVIEW_SEX: "SET_REVIEW_SEX" = "SET_REVIEW_SEX";
+export const SET_REVIEW_AGE: "SET_REVIEW_AGE" = "SET_REVIEW_AGE";
+export const SET_REVIEW_NAME: "SET_REVIEW_NAME" = "SET_REVIEW_NAME";
+export const SET_REVIEW_REVIEW: "SET_REVIEW_REVIEW" = "SET_REVIEW_REVIEW";
+export const SET_REVIEW_SUCCESS_STATUS: "SET_REVIEW_SUCCESS_STATUS" = "SET_REVIEW_SUCCESS_STATUS";
 
 export interface ISetLanguage {
   readonly type: typeof SET_LANGUAGE;
@@ -100,9 +108,36 @@ export interface ISetWindowSize {
     height: number;
   };
 }
+export interface ISetWindowWidth {
+  readonly type: typeof SET_WINDOW_WIDTH;
+  windowWidthProps: {
+    width: number;
+   
+  };
+}
 export interface ISetToggleReviewStatus {
   readonly type: typeof SET_TOGGLE_REVIEW_STATUS;
   toggleReviewStatus: boolean;
+}
+export interface ISetReviewReview {
+  readonly type: typeof SET_REVIEW_REVIEW;
+  review: string;
+}
+export interface ISetReviewSuccessStatus {
+  readonly type: typeof SET_REVIEW_SUCCESS_STATUS;
+  status: boolean;
+}
+export interface ISetReviewAge {
+  readonly type: typeof SET_REVIEW_AGE;
+  age: string;
+}
+export interface ISetReviewName {
+  readonly type: typeof SET_REVIEW_NAME;
+  name: string;
+}
+export interface ISetReviewSex {
+  readonly type: typeof SET_REVIEW_SEX;
+  sex: {male: boolean, female: boolean};
 }
 
 export type ActionsTypes =
@@ -126,4 +161,10 @@ export type ActionsTypes =
   | IOpenCertificateModal
   | ICloseCertificateModal
   | ISetReviewProps
+  | ISetWindowWidth
+  | ISetReviewReview
+  | ISetReviewAge
+  | ISetReviewName
+  | ISetReviewSex
+  | ISetReviewSuccessStatus
   | ISetToggleReviewStatus;

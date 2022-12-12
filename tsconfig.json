@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "lib": [
+      "es2016",
+      "dom"
+  ],
     "jsx": "preserve",
     "module": "system",
     "moduleResolution": "node",

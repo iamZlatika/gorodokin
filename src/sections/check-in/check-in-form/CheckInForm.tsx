@@ -23,7 +23,6 @@ import { CheckInFormStyled } from "./styles";
 const CheckInForm = () => {
   const language = useSelector((store: any) => store.language);
 
-  const checkInForm = useRef();
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -97,7 +96,7 @@ const CheckInForm = () => {
       <h2>{localiseString("interface:checkIn", language)}</h2>
       <span>{localiseString("interface:chooseDate", language)}</span>
 
-      <form ref={checkInForm}>
+      <form>
         <div className="datepicker_group">
           <DatePickerComponent
             value={userInfo.date && moment(userInfo.date).format("DD.MM.YYYY")}

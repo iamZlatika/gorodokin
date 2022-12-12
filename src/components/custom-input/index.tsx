@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
 import Button from "../buttons/Button";
-import { useDispatch } from "react-redux";
-import { CLOSE_MODAL } from "../../services/actions";
 import { useSelector } from "../../services/hooks";
 import { localiseString } from "../../services/services";
 

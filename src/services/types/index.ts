@@ -19,8 +19,25 @@ export interface ILocalisation {
   };
 }
 
-
 export interface Size {
   width: number | undefined;
   height: number | undefined;
+}
+export interface Width {
+  width: number | undefined;
+  height: number | undefined;
+}
+
+export type ReviewInfo = {
+  maleSex: boolean;
+  femaleSex: boolean;
+  name: string;
+  age: string;
+  review: string;
+};
+
+export interface ButtonProps {
+  onClick: (e: React.SyntheticEvent) => void;
+  color: string;
+  label: string;
 }

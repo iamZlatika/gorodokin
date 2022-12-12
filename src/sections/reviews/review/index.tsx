@@ -1,30 +1,28 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import Arrow from "../../../components/arrow";
 import femaleUser from "../../../images/icons/user-female.svg";
 import maleUser from "../../../images/icons/user-male.svg";
 import { Reviews } from "../../../data/reviews";
 import { useDispatch, useSelector } from "../../../services/hooks";
-import { SET_REVIEW_PROPS, SET_WINDOW_SIZE } from "../../../services/actions/index";
-import { Size } from "../../../services/types";
-import { useWindowSize } from "../../../services/services";
+import { SET_REVIEW_PROPS } from "../../../services/actions/index";
+import { Width } from "../../../services/types";
+import { useWindowWidth } from "../../../services/services";
 import { ReviewStyled } from "./style";
 import { localiseString } from "../../../services/services";
 //@ts-ignore
-import ReactReadMoreReadLess from "react-read-more-read-less";
 import ReadMore from "../../../components/readMore/ReadMore";
 
 const Review = () => {
   const dispatch = useDispatch();
   const language = useSelector((store: any) => store.language);
   const toggleReviewStatus = useSelector((store: any) => store.toggleReviewStatus);
-  const reviewRef = useRef<HTMLDivElement>();
+  const reviewRef = React.useRef<HTMLDivElement>();
   const offset = useSelector((store: any) => store.reviewProps.offset);
   const screenWidth = useSelector((state: any) => state.reviewProps.screenWidth);
-  const mobileWidth = useSelector((state: any) => state.reviewProps.mobileWidth);
 
-  const windowSize = useSelector((store: any) => store.windowSize);
+  const windowWidth = useSelector((store: any) => store.windowWidth);
 
-  const size: Size = useWindowSize();
+  const width: Width = useWindowWidth();
 
   useEffect(() => {
     dispatch({
@@ -32,23 +30,22 @@ const Review = () => {
       reviewProps: {
         offset: 0,
         screenWidth: 0,
-        mobileWidth: 0,
         toggleReviewStatus: true,
       },
     });
-  }, [windowSize]);
+  }, [windowWidth.width]);
 
-  const reviewStep = (size: Size) => {
-    if (size.width >= 1200) {
+  const reviewStep = (width: Width) => {
+    if (width.width >= 1200) {
       return 850;
     }
-    if (size.width >= 820 && size.width < 1200) {
+    if (width.width >= 820 && width.width < 1200) {
       return 485;
     }
-    if (size.width < 820 && size.width > 390) {
+    if (width.width < 820 && width.width > 390) {
       return 289;
     }
-    if (size.width >= 350 && size.width <= 390) {
+    if (width.width >= 350 && width.width <= 390) {
       return 227;
     }
   };
@@ -58,9 +55,8 @@ const Review = () => {
       type: SET_REVIEW_PROPS,
       reviewProps: {
         offset: offset - 1,
-        screenWidth: screenWidth - reviewStep(size),
-        mobileWidth: 0,
-        toggleReviewStatus: true
+        screenWidth: screenWidth - reviewStep(width),
+        toggleReviewStatus: true,
       },
     });
   };
@@ -69,9 +65,8 @@ const Review = () => {
       type: SET_REVIEW_PROPS,
       reviewProps: {
         offset: offset + 1,
-        screenWidth: screenWidth + reviewStep(size),
-        mobileWidth: 0,
-        toggleReviewStatus: true
+        screenWidth: screenWidth + reviewStep(width),
+        toggleReviewStatus: true,
       },
     });
   };

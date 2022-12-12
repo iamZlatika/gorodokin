@@ -15,9 +15,9 @@ const ReadMore: React.FC<IReadMore> = ({ children, status }) => {
   };
   return (
     <div>
-      {status ? children.slice(0, 150) : children}...
+      {status ? children.slice(0, 150) : children}
       <ReadMoreSpan onClick={toggleShowStatus} className="read-or-hide">
-        {status ? localiseString("interface:readMore", language) : localiseString("interface:readMore", language)}
+        {status ? localiseString("interface:readMore", language) : localiseString("interface:readLess", language)}
       </ReadMoreSpan>
     </div>
   );

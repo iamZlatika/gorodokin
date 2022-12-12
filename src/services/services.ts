@@ -1,8 +1,7 @@
 import { useEffect } from "react";
-import { useSelector,useDispatch } from "../services/hooks";
-import { SET_CERTIFICATE_PROPS, SET_WINDOW_SIZE } from "./actions";
-import { Size } from "./types";
-
+import { useSelector, useDispatch } from "../services/hooks";
+import { SET_WINDOW_SIZE, SET_WINDOW_WIDTH } from "./actions";
+import { Size, Width } from "./types";
 
 export const localiseString = (key: string, language: string) => {
   const localisation = useSelector((state: any) => state.localisation);
@@ -23,7 +22,7 @@ export const localiseString = (key: string, language: string) => {
 
 export function useWindowSize(): Size {
   const windowSize = useSelector((store: any) => store.windowSize);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   useEffect(() => {
     function handleResize() {
       dispatch({
@@ -42,4 +41,23 @@ export function useWindowSize(): Size {
   }, []);
   return windowSize;
 }
+export function useWindowWidth(): Width {
+  const windowSize = useSelector((store: any) => store.windowWidth);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    function handleResize() {
+      dispatch({
+        type: SET_WINDOW_WIDTH,
+        windowWidthProps: {
+          width: window.innerWidth,
+        },
+      });
+    }
 
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, [window.innerWidth]);
+  return windowSize;
+}
