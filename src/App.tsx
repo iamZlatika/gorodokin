@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import { Route, Switch, useHistory, useLocation } from "react-router-dom";
 import "./index.css";
 import Header from "./sections/header";
@@ -18,6 +18,7 @@ import { useSelector } from "./services/hooks";
 import { Location } from "history";
 import CustomInput from "./components/custom-input";
 import ModalSuccess from "./components/modal-success";
+import EasyWeek from "./components/easyWeek";
 
 const App: React.FC = () => {
   const history = useHistory();
@@ -27,16 +28,14 @@ const App: React.FC = () => {
   const dispatch = useDispatch();
   const reviewStatus = useSelector((store) => store.reviewStatus);
   const certificatesStatus = useSelector((store) => store.certificatesStatus);
-  const reviewSuccessStatus = useSelector((store) => store.reviewSuccessStatus);
-  const confirmCheckIn = () => history.goBack()
-
+  const confirmCheckIn = () => history.goBack();
 
   return (
     <>
       <Switch location={background || location}>
         <Route path="/" exact>
           <Header />
-          <Showcase/>
+          <Showcase />
           <AboutMe />
           <Problems />
           <ShowImage />
@@ -51,7 +50,8 @@ const App: React.FC = () => {
               <FormReview />
             </Modal>
           )}
-          <CheckIn/>
+          {/* <CheckIn /> */}
+          <EasyWeek />
           <Footer />
         </Route>
       </Switch>
@@ -59,9 +59,7 @@ const App: React.FC = () => {
         path="/confirm-check-in"
         children={
           background && (
-            <Modal
-              onClose={confirmCheckIn}
-            >
+            <Modal onClose={confirmCheckIn}>
               <CustomInput onClick={confirmCheckIn} />
             </Modal>
           )
@@ -71,9 +69,7 @@ const App: React.FC = () => {
         path="/successfully-send"
         children={
           background && (
-            <Modal
-              onClose={confirmCheckIn}
-            >
+            <Modal onClose={confirmCheckIn}>
               <ModalSuccess />
             </Modal>
           )

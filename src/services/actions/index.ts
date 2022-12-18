@@ -26,7 +26,6 @@ export const SET_REVIEW_SEX: "SET_REVIEW_SEX" = "SET_REVIEW_SEX";
 export const SET_REVIEW_AGE: "SET_REVIEW_AGE" = "SET_REVIEW_AGE";
 export const SET_REVIEW_NAME: "SET_REVIEW_NAME" = "SET_REVIEW_NAME";
 export const SET_REVIEW_REVIEW: "SET_REVIEW_REVIEW" = "SET_REVIEW_REVIEW";
-export const SET_REVIEW_SUCCESS_STATUS: "SET_REVIEW_SUCCESS_STATUS" = "SET_REVIEW_SUCCESS_STATUS";
 
 export interface ISetLanguage {
   readonly type: typeof SET_LANGUAGE;
@@ -98,7 +97,7 @@ export interface ISetReviewProps {
   reviewProps: {
     width: number;
     offset: number;
-    toggleReviewStatus: boolean,
+    toggleReviewStatus: boolean;
   };
 }
 export interface ISetWindowSize {
@@ -112,7 +111,6 @@ export interface ISetWindowWidth {
   readonly type: typeof SET_WINDOW_WIDTH;
   windowWidthProps: {
     width: number;
-   
   };
 }
 export interface ISetToggleReviewStatus {
@@ -122,10 +120,6 @@ export interface ISetToggleReviewStatus {
 export interface ISetReviewReview {
   readonly type: typeof SET_REVIEW_REVIEW;
   review: string;
-}
-export interface ISetReviewSuccessStatus {
-  readonly type: typeof SET_REVIEW_SUCCESS_STATUS;
-  status: boolean;
 }
 export interface ISetReviewAge {
   readonly type: typeof SET_REVIEW_AGE;
@@ -137,7 +131,7 @@ export interface ISetReviewName {
 }
 export interface ISetReviewSex {
   readonly type: typeof SET_REVIEW_SEX;
-  sex: {male: boolean, female: boolean};
+  sex: { male: boolean; female: boolean };
 }
 
 export type ActionsTypes =
@@ -166,5 +160,4 @@ export type ActionsTypes =
   | ISetReviewAge
   | ISetReviewName
   | ISetReviewSex
-  | ISetReviewSuccessStatus
   | ISetToggleReviewStatus;

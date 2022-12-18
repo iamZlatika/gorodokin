@@ -75,7 +75,7 @@ const FooterWrapper = styled.div`
 const Footer = () => {
     const language = useSelector((store: any) => store.language);
   return (
-    <FooterWrapper>
+    <FooterWrapper id="contacts">
       <div className="footer_container">
         <div className="footer_content">
           <Contacts />

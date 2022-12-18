@@ -23,7 +23,6 @@ import {
   SET_REVIEW_NAME,
   SET_REVIEW_REVIEW,
   SET_REVIEW_SEX,
-  SET_REVIEW_SUCCESS_STATUS,
 } from "../actions";
 import { ActionsTypes } from "../actions";
 import { dictionary } from "../../data/localisation";
@@ -64,7 +63,6 @@ interface initialStateProps {
     offset: number;
   };
   reviewInfo: ReviewInfo;
-  reviewSuccessStatus: boolean
 }
 
 const initialState: initialStateProps = {
@@ -108,7 +106,6 @@ const initialState: initialStateProps = {
     age: "",
     review: "",
   },
-  reviewSuccessStatus: false,
 };
 
 export const rootReducer = (state = initialState, action: ActionsTypes) => {
@@ -271,12 +268,6 @@ export const rootReducer = (state = initialState, action: ActionsTypes) => {
       return {
         ...state,
         reviewInfo: { ...state.reviewInfo, maleSex: action.sex.male, femaleSex: action.sex.female },
-      };
-    }
-    case SET_REVIEW_SUCCESS_STATUS: {
-      return {
-        ...state,
-        reviewSuccessStatus: action.status,
       };
     }
     default: {
