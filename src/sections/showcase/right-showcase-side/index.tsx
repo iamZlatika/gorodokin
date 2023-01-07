@@ -48,6 +48,7 @@ const RightShowcase = () => {
       <img src={showcasePhoto} alt="Антон Городокин" />
 
       <h2>{localiseString("contacts:name", language)}</h2>
+     
       <h3>{localiseString("interface:profession", language)}</h3>
 
       <SocialNetItems element="showcase-mobile" />

@@ -2,6 +2,7 @@ export const dictionary = {
   langPacks: {
     ru: {
       "aboutme:title": "Обо мне",
+      "aboutme:consultation": "Я консультирую онлайн в Telegam, Viber, Zoom та Whatsapp, а также очно у г. Запорожье",
       "aboutme:text":
         "Рад приветствовать Вас, я Антон Городокин, психиатр (MD) с академической степенью доктора философии в области психиатрии (PhD), специализируюсь на тревоге и депрессии. Консультирую сложных пациентов и преподаю психиатрию англоязычным студентам в медицинском университете. Я выступаю на международных психиатрических конгрессах таких сообществ, как World psychiatric association (WPA) и European College of Neuropsychopharmacology (ECNP). Как равный консультант я понимаю, что чувствуют мои пациенты, и знаю, как это исправить. Полагаю это наиболее значительным своим достижением.",
       "aboutme:note": "Если вам нужна помощь профессионала в сфере психического здоровья, записывайтесь.",
@@ -37,6 +38,7 @@ export const dictionary = {
       "button:review": "Оставить отзыв",
       "button:ok": "Ок",
       "interface:profession": "Психиатр MD PhD",
+      "interface:online": "Онлайн-консультации Telegram / Viber / Zoom / Whapsapp, Очные консультации у м. Запоріжжя",
       "interface:checkIn": "Запланировать консультацию",
       "interface:chooseDate": "Выбери подходящую дату и заполни поля",
       "interface:date": "Дата",
@@ -83,6 +85,7 @@ export const dictionary = {
     },
     ua: {
       "aboutme:title": "Біографія",
+      "aboutme:consultation": "Я консультую онлайн у Telegam, Viber, Zoom та Whatsapp, а також очно у м. Запоріжжя",
       "aboutme:text":
         "Вітаю, я Антон Городокін, психіатр з академічним ступенем доктора філософії за спеціальністю «психіатрія». Я спеціалізуюся на психічних розладах, які пов’язані зі стресом, а саме – патологічній тривозі та депресії. Моя кваліфікація дозволяє займатися складними випадками. Окрім того, я викладаю психіатрію та займаюся науковою діяльністю в медичному університеті. Як спікер я систематично беру участь у наукових конференціях міжнародного рівня, організованих Всесвітньою психіатричною асоціацією (WPA) та Європейським коледжем нейропсихофармакології (ECNP). Мій особистий досвід стосовно проблем, пов’язаних зі стресом, дозволяє мені виступати рівним консультантом для моїх клієнтів.",
       "aboutme:note": "Якщо вам потрібна моя професійна допомога, запишіться на консультацію.",
@@ -117,6 +120,7 @@ export const dictionary = {
       "button:review": "Залишити відгук",
       "button:ok": "Так",
       "interface:profession": "Психіатр PhD",
+      "interface:online": "Онлайн-консультації Telegram / Viber / Zoom / Whapsapp, Очні консультації у м. Запоріжжя",
       "interface:checkIn": "Запланувати консультацію",
       "interface:chooseDate": "Оберіть дату та заповніть форму",
       "interface:date": "Дата",
@@ -163,6 +167,7 @@ export const dictionary = {
     },
     en: {
       "aboutme:title": "Biography",
+      "aboutme:consultation": "I'm consulting online via Telegam, Viber, Zoom and Whatsapp and personally in Zaporizhzhya, Ukraine",
       "aboutme:text":
         "Hello, I'm Anton Gorodokin, psychiatrist (MD) and Philosophiæ Doctor (PhD) in felid of psychiatry. My specialization is stress-related mental disorders, particularly - pathological anxiety and depression. My qualification implies consultations on complicated clinical cases, also I'm an assistant professor in medical university. I systematically take part as a speaker in scientific events organized by World psychiatric association (WPA) and European College of Neuropsychopharmacology (ECNP). My own experience in stress-related violations allows me to fully understand my patients.",
       "aboutme:note": "If you need my professional help, sign up.",
@@ -199,6 +204,7 @@ export const dictionary = {
       "button:review": "Leave the feedback",
       "button:ok": "Ok",
       "interface:profession": "Psychiatrist MD PhD",
+      "interface:online": "Online appointments via Telegram / Viber / Zoom / Whapsapp, Personal appointment in Zaporizhzhya, Ukraine",
       "interface:checkIn": "Schedule an appointment",
       "interface:chooseDate": "Choose date and fill the form",
       "interface:date": "Date",

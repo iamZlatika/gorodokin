@@ -28,7 +28,15 @@ const LeftShowcaseWrapper = styled.div`
     line-height: 23px;
     user-select: none;
     mask-type: 14px;
-    margin-bottom: 67px;
+    margin-bottom: 50px;
+  }
+  h4{
+    margin-top: 15px;
+    font-family: Raleway;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 18px;
+
   }
 
   @media (max-width: 1200px) {
@@ -68,6 +76,7 @@ const LeftShowcase = () => {
   return (
     <LeftShowcaseWrapper>
       <h1>{localiseString("contacts:name", language)} </h1>
+      <h4>{localiseString("interface:online", language)}</h4>
       <h3>{localiseString("interface:titleDoctor", language)}</h3>
       <Button onClick={handleClick} label={localiseString("button:checkIn", language)} color="default" />
     </LeftShowcaseWrapper>

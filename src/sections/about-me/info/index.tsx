@@ -29,7 +29,10 @@ const InfoWrapper = styled.div`
     display: inline-block;
     line-height: 130%;
     padding-top: 14px;
-    padding-bottom: 22px;
+    padding-bottom: 11px;
+  }
+  .btn_container{
+    margin-top: 20px;
   }
 
   @media (max-width: 1200px) {
@@ -64,6 +67,7 @@ const Info: React.FC<InfoProps> = ({ info }) => {
     <InfoWrapper>
       <h2>{localiseString(title, language)}</h2>
       <p>{localiseString(text, language)}</p>
+      <span>{localiseString("aboutme:consultation", language)}</span>
       <span>{localiseString(note, language)}</span>
       <div className="btn_container">
         <Button onClick={handleClick} label={localiseString("button:checkIn", language)} color="light" />
